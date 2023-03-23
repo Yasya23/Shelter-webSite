@@ -1,0 +1,16 @@
+/* components-logo */
+.logo {
+  text-align: center;
+  &__title {
+    font-size: toRem(32);
+    letter-spacing: 0.06em;
+    line-height: 110%;
+    margin-bottom: toRem(10);
+  }
+  &__subtitle {
+    @include arial-normal;
+    font-size: toRem(13);
+    line-height: px-to-percent(15, 13);
+    letter-spacing: 0.1em;
+  }
+}

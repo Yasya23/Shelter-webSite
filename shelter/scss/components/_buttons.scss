@@ -1,0 +1,9 @@
+.button {
+  padding: toRem(15) toRem(45);
+  border-radius: toRem(100);
+  background-color: $color-primary;
+  color: $color-dark-3xl;
+  font-size: toRem(17);
+  letter-spacing: 0.06em;
+  line-height: 130%;
+}

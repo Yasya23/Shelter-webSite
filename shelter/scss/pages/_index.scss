@@ -1,0 +1,68 @@
+/*pages-index*/
+.text {
+  @include text;
+}
+.subtitle {
+  @include subtitle;
+}
+
+.header {
+  z-index: 1;
+}
+
+.logo {
+  &__title {
+    color: $color-primary;
+  }
+  &__subtitle {
+    color: $color-white;
+  }
+}
+
+.not-only {
+  background-image: $background-gradient;
+  width: 100%;
+  margin-top: toRem(-120);
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: toRem(180);
+  }
+  &__content {
+    max-width: toRem(460);
+    margin-top: toRem(163);
+  }
+  &__title {
+    max-width: toRem(310);
+    margin-bottom: toRem(42);
+    font-size: toRem(44);
+    line-height: 130%;
+    color: $color-white;
+  }
+  &__text {
+    margin-bottom: toRem(42);
+    color: $color-dark-s;
+  }
+  &__button {
+    display: inline-block;
+  }
+}
+
+.about {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: toRem(80) toRem(175) toRem(100);
+  }
+  &__content {
+    max-width: toRem(430);
+    padding: toRem(14) 0;
+  }
+  &__title {
+    max-width: toRem(370);
+    margin-bottom: toRem(25);
+  }
+  &__text:not(:last-child) {
+    margin-bottom: toRem(25);
+  }
+}

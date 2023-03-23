@@ -1,0 +1,14 @@
+.navigation {
+  display: flex;
+  gap: toRem(35);
+  &__link {
+    @include arial-normal;
+    @include text;
+    line-height: 160%;
+    color: $color-dark-s;
+    &:active {
+      border-bottom: 3px solid $color-primary;
+      color: $color-white;
+    }
+  }
+}

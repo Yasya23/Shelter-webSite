@@ -1,0 +1,8 @@
+.header {
+  padding: toRem(30) 0;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
