@@ -34,6 +34,14 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/footer-icon/icomoon.eot?lg21d9");
+  src: url("../fonts/footer-icon/icomoon.eot?lg21d9#iefix") format("embedded-opentype"), url("../fonts/footer-icon/icomoon.ttf?lg21d9") format("truetype"), url("../fonts/footer-icon/icomoon.woff?lg21d9") format("woff"), url("../fonts/footer-icon/icomoon.svg?lg21d9#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
 /*base-reset*/
 *,
 *::before,
@@ -47,7 +55,12 @@
 
 a {
   text-decoration: none;
+  color: inherit;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+address {
+  font-style: normal;
 }
 
 ul,
@@ -99,15 +112,12 @@ h6 {
   font-family: "Arial";
   font-style: normal;
   font-weight: normal;
-  font-family: "Arial";
-  font-style: normal;
-  font-weight: normal;
   font-size: 0.94rem;
   line-height: 160%;
   line-height: 160%;
   color: #cdcdcd;
 }
-.navigation__link:active {
+.navigation__link_active {
   border-bottom: 3px solid #f1cdb3;
   color: #ffffff;
 }
@@ -120,6 +130,37 @@ h6 {
   font-size: 1.06rem;
   letter-spacing: 0.06em;
   line-height: 130%;
+}
+
+.button-outline {
+  font-family: "Georgia";
+  font-weight: normal;
+  font-style: normal;
+  background-color: #fafafa;
+  border: 2px solid #f1cdb3;
+}
+
+.card {
+  width: 16.88rem;
+  min-height: 27.19rem;
+  padding-bottom: 1.88rem;
+  background-color: #fafafa;
+  border-radius: 0.56rem;
+  text-align: center;
+}
+.card__img {
+  margin-bottom: 1.88rem;
+  max-width: 100%;
+  height: auto;
+}
+.card__title {
+  font-size: 1.25rem;
+  line-height: 120%;
+  margin-bottom: 1.75rem;
+  letter-spacing: 0.06em;
+}
+.card__button {
+  letter-spacing: 0.06em;
 }
 
 /* layout-wrapper(push the footer to the bottom of the page) */
@@ -156,6 +197,76 @@ main {
   padding: 0 2.5rem;
 }
 
+.footer {
+  background-image: radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%);
+  width: 100%;
+}
+.footer__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 2.5rem;
+}
+.footer__contacts {
+  max-width: 17.56rem;
+  padding-top: 1rem;
+}
+.footer__location {
+  max-width: 18.75rem;
+  padding-top: 1rem;
+}
+.footer__title {
+  color: #ffffff;
+  margin-bottom: 1.88rem;
+}
+.footer__contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.88rem;
+  font-size: 1.25rem;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+}
+.footer__img {
+  width: 18.75rem;
+  height: tpRem(310);
+}
+
+.icon-icon-email::before {
+  font-size: 30px;
+  line-height: 150%;
+  margin-right: 1.25rem;
+  font-family: "icomoon";
+  content: "\e900";
+  color: #f1cdb3;
+}
+
+.icon-icon-marker:before {
+  font-size: 30px;
+  line-height: 150%;
+  margin-right: 1.25rem;
+  font-family: "icomoon";
+  content: "\e901";
+  color: #f1cdb3;
+}
+
+.icon-icon-phone:before {
+  font-size: 30px;
+  line-height: 150%;
+  margin-right: 1.25rem;
+  font-family: "icomoon";
+  content: "\e902";
+  color: #f1cdb3;
+}
+
 .header {
   padding: 1.88rem 0;
 }
@@ -169,6 +280,39 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3.31rem;
+}
+.slider__icon {
+  font-family: "Georgia";
+  font-weight: bold;
+  font-style: normal;
+  padding: 0.88rem 1rem;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  color: #292929;
+}
+.slider__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 /*pages-index*/
@@ -245,8 +389,114 @@ main {
 }
 .about__title {
   max-width: 23.13rem;
-  margin-bottom: 1.56rem;
+  margin-bottom: 1.5rem;
 }
 .about__text:not(:last-child) {
   margin-bottom: 1.56rem;
+}
+
+.our-friends {
+  background-color: #f6f6f6;
+}
+.our-friends__wrapper {
+  padding-top: 4.88rem;
+  padding-bottom: 7.25rem;
+  text-align: center;
+}
+.our-friends__title {
+  margin-bottom: 3.63rem;
+}
+.our-friends__slider {
+  margin-bottom: 4.56rem;
+}
+
+.help__wrapper {
+  padding-top: 4.94rem;
+  padding-bottom: 6.25rem;
+  text-align: center;
+}
+.help__title {
+  margin-bottom: 3.63rem;
+}
+.help__list {
+  padding: 0 5.06rem;
+}
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 7.5rem;
+     -moz-column-gap: 7.5rem;
+          column-gap: 7.5rem;
+  row-gap: 3.44rem;
+}
+.list__icon {
+  margin-bottom: 1.88rem;
+}
+.list__title {
+  font-size: 1.25rem;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+
+.in-addition {
+  background-color: #f6f6f6;
+}
+.in-addition__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.88rem;
+  justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 6.19rem;
+}
+.in-addition__img {
+  max-width: 100%;
+}
+.in-addition__content {
+  max-width: 23.75rem;
+  text-align: left;
+}
+.in-addition__title {
+  max-width: 18.75rem;
+  margin-bottom: 1.25rem;
+}
+.in-addition__subtitle {
+  margin-bottom: 1.25rem;
+  font-size: 0.94rem;
+  letter-spacing: 0.06em;
+}
+.in-addition__card {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding: 0.63rem 0.94rem;
+  background-color: #f1cdb3;
+  border-radius: 0.56rem;
+  font-size: 1.25rem;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+.in-addition__icon {
+  margin-right: 0.63rem;
+}
+.in-addition__text {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: normal;
+  font-size: 0.75rem;
+  line-height: 150%;
+  color: #b2b2b2;
 }

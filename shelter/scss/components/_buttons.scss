@@ -7,3 +7,9 @@
   letter-spacing: 0.06em;
   line-height: 130%;
 }
+
+.button-outline {
+  @include georgia-normal;
+  background-color: $color-light-s;
+  border: 2px solid $color-primary;
+}

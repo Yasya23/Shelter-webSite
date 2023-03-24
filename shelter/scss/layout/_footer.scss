@@ -1,0 +1,63 @@
+.footer {
+  background-image: $background-footer;
+  width: 100%;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: toRem(40);
+  }
+  &__contacts {
+    max-width: toRem(281);
+    padding-top: toRem(16);
+  }
+  &__location {
+    max-width: toRem(300);
+    padding-top: toRem(16);
+  }
+
+  &__title {
+    color: $color-white;
+    margin-bottom: toRem(30);
+  }
+  &__contact {
+    display: flex;
+    align-items: center;
+    margin-bottom: toRem(30);
+    font-size: toRem(20);
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: $color-primary;
+  }
+  &__icon {
+  }
+  &__img {
+    width: toRem(300);
+    height: tpRem(310);
+  }
+}
+
+.icon-icon-email::before {
+  font-size: 30px;
+  line-height: 150%;
+  margin-right: toRem(20);
+  font-family: 'icomoon';
+  content: '\e900';
+  color: #f1cdb3;
+}
+
+.icon-icon-marker:before {
+  font-size: 30px;
+  line-height: 150%;
+  margin-right: toRem(20);
+  font-family: 'icomoon';
+  content: '\e901';
+  color: #f1cdb3;
+}
+.icon-icon-phone:before {
+  font-size: 30px;
+  line-height: 150%;
+  margin-right: toRem(20);
+  font-family: 'icomoon';
+  content: '\e902';
+  color: #f1cdb3;
+}

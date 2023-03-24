@@ -16,8 +16,20 @@
   font-style: normal;
 }
 
+@mixin georgia-bold {
+  font-family: 'Georgia';
+  font-weight: bold;
+  font-style: normal;
+}
+
 @mixin arial-normal {
   font-family: 'Arial';
   font-style: normal;
+  font-weight: normal;
+}
+
+@mixin arial-italic {
+  font-family: 'Arial';
+  font-style: italic;
   font-weight: normal;
 }

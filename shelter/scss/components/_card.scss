@@ -1,0 +1,22 @@
+.card {
+  width: toRem(270);
+  min-height: toRem(435);
+  padding-bottom: toRem(30);
+  background-color: $color-light-s;
+  border-radius: toRem(9);
+  text-align: center;
+  &__img {
+    margin-bottom: toRem(30);
+    max-width: 100%;
+    height: auto;
+  }
+  &__title {
+    font-size: toRem(20);
+    line-height: px-to-percent(24, 20);
+    margin-bottom: toRem(28);
+    letter-spacing: 0.06em;
+  }
+  &__button {
+    letter-spacing: 0.06em;
+  }
+}
