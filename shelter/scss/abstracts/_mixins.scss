@@ -1,14 +1,19 @@
+// general subtitle values
+
 @mixin subtitle {
   font-size: toRem(35);
   line-height: 130%;
   letter-spacing: 0.06em;
 }
+// general text values
 
 @mixin text {
   @include arial-normal;
   font-size: toRem(15);
   line-height: 160%;
 }
+
+// fonts
 
 @mixin georgia-normal {
   font-family: 'Georgia';
@@ -20,6 +25,12 @@
   font-family: 'Georgia';
   font-weight: bold;
   font-style: normal;
+}
+
+@mixin georgia-italic {
+  font-family: 'Georgia';
+  font-weight: bold;
+  font-style: italic;
 }
 
 @mixin arial-normal {

@@ -1,3 +1,5 @@
+/* components-buttons */
+
 .button {
   padding: toRem(15) toRem(45);
   border-radius: toRem(100);
@@ -6,6 +8,11 @@
   font-size: toRem(17);
   letter-spacing: 0.06em;
   line-height: 130%;
+  transition: $transition;
+  &:hover {
+    border: 2px solid $color-primary;
+    background-color: transparent;
+  }
 }
 
 .button-outline {

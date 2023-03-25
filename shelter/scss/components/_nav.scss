@@ -1,13 +1,14 @@
+/* components-navigation */
+
 .navigation {
   display: flex;
   gap: toRem(35);
   &__link {
     @include text;
     line-height: 160%;
-    color: $color-dark-s;
+    transition: $transition;
     &_active {
       border-bottom: 3px solid $color-primary;
-      color: $color-white;
     }
   }
 }

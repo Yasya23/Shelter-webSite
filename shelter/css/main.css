@@ -102,6 +102,7 @@ h6 {
   letter-spacing: 0.1em;
 }
 
+/* components-navigation */
 .navigation {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -115,13 +116,14 @@ h6 {
   font-size: 0.94rem;
   line-height: 160%;
   line-height: 160%;
-  color: #cdcdcd;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
 }
 .navigation__link_active {
   border-bottom: 3px solid #f1cdb3;
-  color: #ffffff;
 }
 
+/* components-buttons */
 .button {
   padding: 0.94rem 2.81rem;
   border-radius: 6.25rem;
@@ -130,6 +132,12 @@ h6 {
   font-size: 1.06rem;
   letter-spacing: 0.06em;
   line-height: 130%;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.button:hover {
+  border: 2px solid #f1cdb3;
+  background-color: transparent;
 }
 
 .button-outline {
@@ -140,6 +148,7 @@ h6 {
   border: 2px solid #f1cdb3;
 }
 
+/* components-card */
 .card {
   width: 16.88rem;
   min-height: 27.19rem;
@@ -147,6 +156,9 @@ h6 {
   background-color: #fafafa;
   border-radius: 0.56rem;
   text-align: center;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
 }
 .card__img {
   margin-bottom: 1.88rem;
@@ -161,9 +173,20 @@ h6 {
 }
 .card__button {
   letter-spacing: 0.06em;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+.card:hover {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+          box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+.card:hover .card__button {
+  background-color: #f1cdb3;
 }
 
-/* layout-wrapper(push the footer to the bottom of the page) */
+/* layout-wrapper */
 html,
 body {
   font-family: "Georgia";
@@ -171,6 +194,7 @@ body {
   font-style: normal;
   height: 100%;
   color: #545454;
+  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -197,8 +221,9 @@ main {
   padding: 0 2.5rem;
 }
 
+/*layout-footer*/
 .footer {
-  background-image: radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%);
+  background-image: url(../img/background-pattern/pattern.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%);
   width: 100%;
 }
 .footer__wrapper {
@@ -234,6 +259,11 @@ main {
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #f1cdb3;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.footer__contact:hover {
+  opacity: 0.75;
 }
 .footer__img {
   width: 18.75rem;
@@ -267,6 +297,7 @@ main {
   color: #f1cdb3;
 }
 
+/*layout-header*/
 .header {
   padding: 1.88rem 0;
 }
@@ -282,6 +313,7 @@ main {
           align-items: center;
 }
 
+/*layout-slider*/
 .slider {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -302,6 +334,12 @@ main {
   border: 2px solid #f1cdb3;
   border-radius: 100px;
   color: #292929;
+  cursor: pointer;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.slider__icon:hover {
+  background-color: #f1cdb3;
 }
 .slider__cards {
   display: -webkit-box;
@@ -341,8 +379,19 @@ main {
   color: #ffffff;
 }
 
+.navigation__link {
+  color: #cdcdcd;
+}
+.navigation__link_active {
+  color: #fafafa;
+}
+.navigation__link:hover {
+  color: #fafafa;
+}
+
+/*not-only section*/
 .not-only {
-  background-image: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+  background-image: url(../img/background-pattern/pattern.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
   width: 100%;
   margin-top: -7.5rem;
 }
@@ -368,12 +417,16 @@ main {
 }
 .not-only__text {
   margin-bottom: 2.63rem;
-  color: #cdcdcd;
+  color: #fafafa;
 }
 .not-only__button {
   display: inline-block;
 }
+.not-only__button:hover {
+  color: #f1cdb3;
+}
 
+/*about section*/
 .about__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -395,6 +448,7 @@ main {
   margin-bottom: 1.56rem;
 }
 
+/*our friends section*/
 .our-friends {
   background-color: #f6f6f6;
 }
@@ -410,6 +464,7 @@ main {
   margin-bottom: 4.56rem;
 }
 
+/*help section*/
 .help__wrapper {
   padding-top: 4.94rem;
   padding-bottom: 6.25rem;
@@ -445,6 +500,7 @@ main {
   letter-spacing: 0.06em;
 }
 
+/*in-addition section*/
 .in-addition {
   background-color: #f6f6f6;
 }
@@ -459,7 +515,6 @@ main {
       -ms-flex-align: center;
           align-items: center;
   gap: 1.88rem;
-  justify-content: center;
   padding-top: 5rem;
   padding-bottom: 6.19rem;
 }
@@ -488,6 +543,11 @@ main {
   font-size: 1.25rem;
   line-height: 115%;
   letter-spacing: 0.06em;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.in-addition__card:hover {
+  opacity: 0.8;
 }
 .in-addition__icon {
   margin-right: 0.63rem;
@@ -500,3 +560,5 @@ main {
   line-height: 150%;
   color: #b2b2b2;
 }
+
+/*pages-pets*/

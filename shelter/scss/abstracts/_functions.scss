@@ -1,11 +1,3 @@
-// @function toRem($value) {
-//   @return (calc($value / 16) + rem);
-// }
-
-// @function px-to-percent($value, $font-size) {
-//   @return ($value / $font-size) * 100%;
-// }
-
 @function toRem($value) {
   @return (round((calc($value / 16)) * 100)) / 100 + rem;
 }

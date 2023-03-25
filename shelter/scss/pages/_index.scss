@@ -1,4 +1,5 @@
 /*pages-index*/
+
 .text {
   @include text;
 }
@@ -19,146 +20,20 @@
   }
 }
 
-.not-only {
-  background-image: $background-gradient;
-  width: 100%;
-  margin-top: toRem(-120);
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding-top: toRem(180);
+.navigation {
+  &__link {
+    color: $color-light-l;
+    &_active {
+      color: $color-light-s;
+    }
   }
-  &__content {
-    max-width: toRem(460);
-    margin-top: toRem(163);
-  }
-  &__title {
-    max-width: toRem(310);
-    margin-bottom: toRem(42);
-    font-size: toRem(44);
-    line-height: 130%;
-    color: $color-white;
-  }
-  &__text {
-    margin-bottom: toRem(42);
-    color: $color-dark-s;
-  }
-  &__button {
-    display: inline-block;
+  &__link:hover {
+    color: $color-light-s;
   }
 }
 
-.about {
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding: toRem(80) toRem(175) toRem(100);
-  }
-  &__content {
-    max-width: toRem(430);
-    padding: toRem(14) 0;
-  }
-  &__title {
-    max-width: toRem(370);
-    margin-bottom: toRem(24);
-  }
-  &__text:not(:last-child) {
-    margin-bottom: toRem(25);
-  }
-}
-
-.our-friends {
-  background-color: $color-light-1;
-  &__wrapper {
-    padding-top: toRem(78);
-    padding-bottom: toRem(116);
-    text-align: center;
-  }
-  &__title {
-    margin-bottom: toRem(58);
-  }
-  &__slider {
-    margin-bottom: toRem(73);
-  }
-}
-
-.help {
-  &__wrapper {
-    padding-top: toRem(79);
-    padding-bottom: toRem(100);
-    text-align: center;
-  }
-  &__title {
-    margin-bottom: toRem(58);
-  }
-  &__list {
-    padding: 0 toRem(81);
-  }
-}
-
-.list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  column-gap: toRem(120);
-  row-gap: toRem(55);
-
-  &__icon {
-    margin-bottom: toRem(30);
-  }
-
-  &__title {
-    font-size: toRem(20);
-    line-height: 115%;
-    letter-spacing: 0.06em;
-  }
-}
-
-.in-addition {
-  background-color: $color-light-1;
-  &__wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: toRem(30);
-    justify-content: center;
-    padding-top: toRem(80);
-    padding-bottom: toRem(99);
-  }
-  &__img {
-    max-width: 100%;
-  }
-  &__content {
-    max-width: toRem(380);
-    text-align: left;
-  }
-  &__title {
-    max-width: toRem(300);
-    margin-bottom: toRem(20);
-  }
-  &__subtitle {
-    margin-bottom: toRem(20);
-    font-size: toRem(15);
-    letter-spacing: 0.06em;
-  }
-  &__card {
-    display: inline-block;
-    margin-bottom: toRem(20);
-    padding: toRem(10) toRem(15);
-    background-color: $color-primary;
-    border-radius: toRem(9);
-    font-size: toRem(20);
-    line-height: 115%;
-    letter-spacing: 0.06em;
-  }
-  &__icon {
-    margin-right: toRem(10);
-  }
-
-  &__text {
-    @include arial-italic;
-    font-size: toRem(12);
-    line-height: 150%;
-    color: $color-dark-m;
-  }
-}
+@import '../sections/not-only';
+@import '../sections/about';
+@import '../sections/our-friends';
+@import '../sections/help';
+@import '../sections/in-addition';

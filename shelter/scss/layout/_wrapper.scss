@@ -1,9 +1,11 @@
-/* layout-wrapper(push the footer to the bottom of the page) */
+/* layout-wrapper */
+
 html,
 body {
   @include georgia-normal;
   height: 100%;
   color: $color-dark-one;
+  scroll-behavior: smooth;
 }
 
 .wrapper {

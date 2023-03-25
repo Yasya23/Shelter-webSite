@@ -1,0 +1,20 @@
+/*about section*/
+
+.about {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: toRem(80) toRem(175) toRem(100);
+  }
+  &__content {
+    max-width: toRem(430);
+    padding: toRem(14) 0;
+  }
+  &__title {
+    max-width: toRem(370);
+    margin-bottom: toRem(24);
+  }
+  &__text:not(:last-child) {
+    margin-bottom: toRem(25);
+  }
+}

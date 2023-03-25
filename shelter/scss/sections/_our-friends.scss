@@ -1,0 +1,16 @@
+/*our friends section*/
+
+.our-friends {
+  background-color: $color-light-1;
+  &__wrapper {
+    padding-top: toRem(78);
+    padding-bottom: toRem(116);
+    text-align: center;
+  }
+  &__title {
+    margin-bottom: toRem(58);
+  }
+  &__slider {
+    margin-bottom: toRem(73);
+  }
+}
