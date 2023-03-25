@@ -1,24 +1,23 @@
-/*layout-slider*/
-
-.slider {
+.pagination {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: toRem(53);
+  justify-content: center;
+  column-gap: toRem(20);
   &__icon {
-    padding: toRem(14) toRem(16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: toRem(52);
+    height: toRem(52);
     border: 2px solid $color-primary;
     border-radius: 100px;
+    font-size: toRem(20px);
     color: $color-dark-3xl;
     cursor: pointer;
     transition: $transition;
     &:hover {
       background-color: $color-primary;
     }
-  }
-  &__cards {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
+    &__inactive {
+    }
   }
 }

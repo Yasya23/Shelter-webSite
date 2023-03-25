@@ -1,0 +1,20 @@
+.friends {
+  background-color: $color-light-1;
+  padding-top: toRem(80);
+  padding-bottom: toRem(101);
+  text-align: center;
+  &__title {
+    margin-bottom: toRem(57);
+  }
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: toRem(39);
+    row-gap: toRem(27);
+    margin-bottom: toRem(57);
+  }
+  &__card {
+  }
+}

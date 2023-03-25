@@ -7,28 +7,26 @@
   @include subtitle;
 }
 
-.header {
+.header-main {
   z-index: 1;
-}
-
-.logo {
-  &__title {
-    color: $color-primary;
-  }
-  &__subtitle {
-    color: $color-white;
-  }
-}
-
-.navigation {
-  &__link {
-    color: $color-light-l;
-    &_active {
-      color: $color-light-s;
+  & .logo {
+    &__title {
+      color: $color-primary;
+    }
+    &__subtitle {
+      color: $color-white;
     }
   }
-  &__link:hover {
-    color: $color-light-s;
+  & .navigation {
+    &__link {
+      color: $color-light-l;
+      &_active {
+        color: $color-light-s;
+      }
+    }
+    &__link:hover {
+      color: $color-light-s;
+    }
   }
 }
 

@@ -186,6 +186,40 @@ h6 {
   background-color: #f1cdb3;
 }
 
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+}
+.pagination__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  font-size: 1.25pxrem;
+  color: #292929;
+  cursor: pointer;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.pagination__icon:hover {
+  background-color: #f1cdb3;
+}
 /* layout-wrapper */
 html,
 body {
@@ -327,9 +361,6 @@ main {
   gap: 3.31rem;
 }
 .slider__icon {
-  font-family: "Georgia";
-  font-weight: bold;
-  font-style: normal;
   padding: 0.88rem 1rem;
   border: 2px solid #f1cdb3;
   border-radius: 100px;
@@ -368,24 +399,22 @@ main {
   letter-spacing: 0.06em;
 }
 
-.header {
+.header-main {
   z-index: 1;
 }
-
-.logo__title {
+.header-main .logo__title {
   color: #f1cdb3;
 }
-.logo__subtitle {
+.header-main .logo__subtitle {
   color: #ffffff;
 }
-
-.navigation__link {
+.header-main .navigation__link {
   color: #cdcdcd;
 }
-.navigation__link_active {
+.header-main .navigation__link_active {
   color: #fafafa;
 }
-.navigation__link:hover {
+.header-main .navigation__link:hover {
   color: #fafafa;
 }
 
@@ -562,3 +591,31 @@ main {
 }
 
 /*pages-pets*/
+.friends {
+  background-color: #f6f6f6;
+  padding-top: 5rem;
+  padding-bottom: 6.31rem;
+  text-align: center;
+}
+.friends__title {
+  margin-bottom: 3.56rem;
+}
+.friends__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 2.44rem;
+     -moz-column-gap: 2.44rem;
+          column-gap: 2.44rem;
+  row-gap: 1.69rem;
+  margin-bottom: 3.56rem;
+}
