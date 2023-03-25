@@ -1,12 +1,5 @@
 /*pages-index*/
 
-.text {
-  @include text;
-}
-.subtitle {
-  @include subtitle;
-}
-
 .header-main {
   z-index: 1;
   & .logo {

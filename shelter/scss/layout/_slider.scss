@@ -13,7 +13,8 @@
     cursor: pointer;
     transition: $transition;
     &:hover {
-      background-color: $color-primary;
+      border: 2px solid $color-primary-light;
+      background-color: $color-primary-light;
     }
   }
   &__cards {

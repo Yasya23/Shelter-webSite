@@ -10,8 +10,8 @@
   line-height: 130%;
   transition: $transition;
   &:hover {
-    border: 2px solid $color-primary;
-    background-color: transparent;
+    background-color: $color-primary-light;
+    color: $color-dark-one;
   }
 }
 

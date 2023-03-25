@@ -17,3 +17,10 @@ body {
 main {
   flex: 1 1 auto;
 }
+
+.text {
+  @include text;
+}
+.subtitle {
+  @include subtitle;
+}

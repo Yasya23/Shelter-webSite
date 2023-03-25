@@ -136,8 +136,8 @@ h6 {
   transition: all ease-in-out 0.3s;
 }
 .button:hover {
-  border: 2px solid #f1cdb3;
-  background-color: transparent;
+  background-color: #fddcc4;
+  color: #545454;
 }
 
 .button-outline {
@@ -183,9 +183,11 @@ h6 {
           box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .card:hover .card__button {
-  background-color: #f1cdb3;
+  border: 2px solid #fddcc4;
+  background-color: #fddcc4;
 }
 
+/*pagination components*/
 .pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -217,9 +219,18 @@ h6 {
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
 }
-.pagination__icon:hover {
+.pagination__icon:not(.pagination__icon_inactive):not(.pagination__number):hover {
   background-color: #f1cdb3;
 }
+.pagination__icon_inactive {
+  border-color: #cdcdcd;
+  color: #cdcdcd;
+  cursor: default;
+}
+.pagination__number {
+  background-color: #f1cdb3;
+}
+
 /* layout-wrapper */
 html,
 body {
@@ -246,6 +257,20 @@ main {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+}
+
+.text {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.94rem;
+  line-height: 160%;
+}
+
+.subtitle {
+  font-size: 2.19rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
 }
 
 /*layout-container*/
@@ -370,7 +395,8 @@ main {
   transition: all ease-in-out 0.3s;
 }
 .slider__icon:hover {
-  background-color: #f1cdb3;
+  border: 2px solid #fddcc4;
+  background-color: #fddcc4;
 }
 .slider__cards {
   display: -webkit-box;
@@ -385,20 +411,6 @@ main {
 }
 
 /*pages-index*/
-.text {
-  font-family: "Arial";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 0.94rem;
-  line-height: 160%;
-}
-
-.subtitle {
-  font-size: 2.19rem;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-}
-
 .header-main {
   z-index: 1;
 }
@@ -450,9 +462,6 @@ main {
 }
 .not-only__button {
   display: inline-block;
-}
-.not-only__button:hover {
-  color: #f1cdb3;
 }
 
 /*about section*/
@@ -576,7 +585,7 @@ main {
   transition: all ease-in-out 0.3s;
 }
 .in-addition__card:hover {
-  opacity: 0.8;
+  background-color: #fddcc4;
 }
 .in-addition__icon {
   margin-right: 0.63rem;
@@ -591,6 +600,21 @@ main {
 }
 
 /*pages-pets*/
+.header-pets .logo {
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.header-pets .logo__subtitle {
+  color: #292929;
+}
+.header-pets .logo:hover {
+  color: #292929;
+}
+.header-pets .navigation__link:hover {
+  color: #292929;
+}
+
+/*friends section*/
 .friends {
   background-color: #f6f6f6;
   padding-top: 5rem;

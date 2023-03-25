@@ -1,3 +1,5 @@
+/*pagination components*/
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -14,10 +16,16 @@
     color: $color-dark-3xl;
     cursor: pointer;
     transition: $transition;
-    &:hover {
+    &:not(.pagination__icon_inactive):not(.pagination__number):hover {
       background-color: $color-primary;
     }
-    &__inactive {
+    &_inactive {
+      border-color: $color-light-l;
+      color: $color-light-l;
+      cursor: default;
     }
+  }
+  &__number {
+    background-color: $color-primary;
   }
 }

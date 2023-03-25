@@ -1,2 +1,19 @@
 /*pages-pets*/
+.header-pets {
+  & .logo {
+    transition: $transition;
+    &__subtitle {
+      color: $color-dark-3xl;
+    }
+    &:hover {
+      color: $color-dark-3xl;
+    }
+  }
+  & .navigation {
+    &__link:hover {
+      color: $color-dark-3xl;
+    }
+  }
+}
+
 @import '../sections/friends';
