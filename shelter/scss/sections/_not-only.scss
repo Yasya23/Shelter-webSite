@@ -3,11 +3,11 @@
 .not-only {
   background-image: $background-start;
   width: 100%;
-  margin-top: toRem(-120);
+  margin-top: toRem(-122);
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    padding-top: toRem(180);
+    padding-top: toRem(182);
   }
   &__content {
     max-width: toRem(460);

@@ -434,7 +434,7 @@ main {
 .not-only {
   background-image: url(../img/background-pattern/pattern.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
   width: 100%;
-  margin-top: -7.5rem;
+  margin-top: -7.63rem;
 }
 .not-only__wrapper {
   display: -webkit-box;
@@ -443,7 +443,7 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 11.25rem;
+  padding-top: 11.38rem;
 }
 .not-only__content {
   max-width: 28.75rem;
