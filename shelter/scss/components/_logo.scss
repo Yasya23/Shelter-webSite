@@ -2,6 +2,7 @@
 
 .logo {
   text-align: center;
+  transition: $transition;
   &__title {
     font-size: toRem(32);
     letter-spacing: 0.06em;

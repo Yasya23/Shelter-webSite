@@ -33,4 +33,7 @@
     border: 2px solid $color-primary-light;
     background-color: $color-primary-light;
   }
+  &:active &__button {
+    background-color: $color-white;
+  }
 }

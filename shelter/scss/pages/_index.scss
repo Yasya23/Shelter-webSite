@@ -5,11 +5,16 @@
   & .logo {
     &__title {
       color: $color-primary;
+      transition: $transition;
     }
     &__subtitle {
       color: $color-white;
     }
+    &:hover {
+      opacity: 0.8;
+    }
   }
+
   & .navigation {
     &__link {
       color: $color-light-l;
@@ -19,6 +24,9 @@
     }
     &__link:hover {
       color: $color-light-s;
+    }
+    &__link:active {
+      color: $color-primary;
     }
   }
 }

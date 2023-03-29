@@ -13,6 +13,9 @@
     background-color: $color-primary-light;
     color: $color-dark-one;
   }
+  &:active {
+    background-color: $color-primary;
+  }
 }
 
 .button-outline {
