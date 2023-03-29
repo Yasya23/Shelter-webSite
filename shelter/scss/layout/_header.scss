@@ -7,4 +7,24 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  &__popup {
+    width: toRem(30);
+    height: toRem(22);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    &_line {
+      width: toRem(30);
+      height: toRem(2);
+      background-color: $color-primary;
+    }
+  }
+  &__navigation {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
 }

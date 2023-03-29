@@ -5,6 +5,12 @@
   line-height: 130%;
   letter-spacing: 0.06em;
 }
+
+@mixin subtitle-mobile {
+  font-size: toRem(25);
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
 // general text values
 
 @mixin text {
@@ -43,4 +49,29 @@
   font-family: 'Arial';
   font-style: italic;
   font-weight: normal;
+}
+
+//media
+@mixin mobile-small {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin decstope {
+  @media (min-width: $decstope) {
+    @content;
+  }
 }

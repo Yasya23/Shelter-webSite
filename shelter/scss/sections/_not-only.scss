@@ -6,6 +6,7 @@
   margin-top: toRem(-122);
   &__wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding-top: toRem(182);
   }
@@ -21,10 +22,21 @@
     color: $color-white;
   }
   &__text {
+    @include text;
     margin-bottom: toRem(42);
     color: $color-light-s;
   }
   &__button {
     display: inline-block;
+  }
+  &__img {
+    min-width: toRem(260);
+    height: auto;
+  }
+  @include decstope {
+    &__img {
+      width: toRem(698);
+      height: toRem(728);
+    }
   }
 }

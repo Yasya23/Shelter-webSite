@@ -1,7 +1,13 @@
 /*layout-container*/
 
 .container {
-  width: toRem(1280);
+  max-width: toRem(1280);
   margin: 0 auto;
-  padding: 0 toRem(40);
+  padding: 0 toRem(20);
+  @include tablet {
+    padding: 0 toRem(30);
+  }
+  @include decstope {
+    padding: 0 toRem(40);
+  }
 }

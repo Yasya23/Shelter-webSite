@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   column-gap: toRem(20);
-  &__icon {
+  &__btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,9 +14,10 @@
     border-radius: 100px;
     font-size: toRem(20px);
     color: $color-dark-3xl;
-    cursor: pointer;
     transition: $transition;
-    &:not(.pagination__icon_inactive):not(.pagination__number):hover {
+    background-color: inherit;
+    cursor: pointer;
+    &:not(.pagination__btn_inactive):not(.pagination__number):hover {
       background-color: $color-primary;
     }
     &_inactive {
@@ -26,6 +27,7 @@
     }
   }
   &__number {
+    cursor: default;
     background-color: $color-primary;
   }
 }
