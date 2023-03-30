@@ -3,14 +3,26 @@
 .our-friends {
   background-color: $color-light-1;
   &__wrapper {
-    padding-top: toRem(78);
-    padding-bottom: toRem(116);
+    padding-top: toRem(41);
+    padding-bottom: toRem(42);
     text-align: center;
+    @include decstope {
+      padding-top: toRem(78);
+      padding-bottom: toRem(100);
+    }
   }
   &__title {
-    margin-bottom: toRem(58);
+    @include subtitle-mobile;
+    margin-bottom: toRem(41);
+    @include decstope {
+      @include subtitle;
+      margin-bottom: toRem(58);
+    }
   }
   &__slider {
-    margin-bottom: toRem(73);
+    margin-bottom: toRem(43);
+    @include decstope {
+      margin-bottom: toRem(58);
+    }
   }
 }

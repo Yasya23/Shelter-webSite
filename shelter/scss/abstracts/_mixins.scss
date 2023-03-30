@@ -11,6 +11,12 @@
   line-height: 130%;
   letter-spacing: 0.06em;
 }
+
+@mixin subtitle-mobile {
+  font-size: toRem(25);
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
 // general text values
 
 @mixin text {
@@ -64,14 +70,38 @@
   }
 }
 
+@mixin max-mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (min-width: $tablet) {
     @content;
   }
 }
 
+@mixin max-tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
 @mixin decstope {
   @media (min-width: $decstope) {
+    @content;
+  }
+}
+
+@mixin max-decstope {
+  @media (max-width: $decstope) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
     @content;
   }
 }

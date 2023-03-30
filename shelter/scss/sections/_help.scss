@@ -2,32 +2,69 @@
 
 .help {
   &__wrapper {
-    padding-top: toRem(79);
-    padding-bottom: toRem(100);
+    padding-top: toRem(42);
+    padding-bottom: toRem(42);
     text-align: center;
+    @include decstope {
+      padding-top: toRem(79);
+      padding-bottom: toRem(100);
+    }
   }
   &__title {
-    margin-bottom: toRem(58);
+    @include subtitle-mobile;
+    margin-bottom: toRem(40);
+    @include decstope {
+      @include subtitle;
+      margin-bottom: toRem(58);
+    }
   }
   &__list {
-    padding: 0 toRem(81);
+    @include decstope {
+      padding: 0 toRem(81);
+    }
   }
 }
 
 .list {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  column-gap: toRem(120);
-  row-gap: toRem(55);
+  justify-content: space-between;
+  gap: toRem(28);
+  padding: 0 toRem(5);
+  @include decstope {
+    padding: 0;
+  }
+  &__item {
+    @include max-tablet {
+      width: toRem(130);
+    }
+  }
+  &__icon {
+    @include max-tablet {
+      width: toRem(52);
+      height: toRem(52);
+    }
+  }
+  @include decstope {
+    justify-content: center;
+    column-gap: toRem(120);
+    row-gap: toRem(55);
+  }
 
   &__icon {
-    margin-bottom: toRem(30);
+    margin-bottom: toRem(20);
+    @include decstope {
+      margin-bottom: toRem(30);
+    }
   }
 
   &__title {
-    font-size: toRem(20);
-    line-height: 115%;
+    font-size: toRem(15);
+    line-height: 110%;
     letter-spacing: 0.06em;
+    @include decstope {
+      font-size: toRem(20);
+      line-height: 115%;
+    }
   }
 }

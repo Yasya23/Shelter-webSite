@@ -1,7 +1,10 @@
 /*layout-header*/
 
 .header {
-  padding: toRem(30) 0;
+  padding: toRem(30) toRem(10);
+  @include decstope {
+    padding: toRem(30) 0;
+  }
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -19,6 +22,9 @@
       width: toRem(30);
       height: toRem(2);
       background-color: $color-primary;
+    }
+    @include tablet {
+      display: none;
     }
   }
   &__navigation {
