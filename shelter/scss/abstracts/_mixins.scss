@@ -71,7 +71,7 @@
 }
 
 @mixin max-mobile {
-  @media (max-width: $mobile) {
+  @media (max-width: $max-mobile) {
     @content;
   }
 }
@@ -83,7 +83,7 @@
 }
 
 @mixin max-tablet {
-  @media (max-width: $tablet) {
+  @media (max-width: $max-tablet) {
     @content;
   }
 }
@@ -95,7 +95,7 @@
 }
 
 @mixin max-decstope {
-  @media (max-width: $decstope) {
+  @media (max-width: $max-decstope) {
     @content;
   }
 }

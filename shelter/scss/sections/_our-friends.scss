@@ -6,22 +6,25 @@
     padding-top: toRem(41);
     padding-bottom: toRem(42);
     text-align: center;
+    @include tablet {
+      padding-top: toRem(80);
+      padding-bottom: toRem(100);
+    }
     @include decstope {
       padding-top: toRem(78);
-      padding-bottom: toRem(100);
     }
   }
   &__title {
     @include subtitle-mobile;
     margin-bottom: toRem(41);
-    @include decstope {
+    @include tablet {
       @include subtitle;
       margin-bottom: toRem(58);
     }
   }
   &__slider {
     margin-bottom: toRem(43);
-    @include decstope {
+    @include tablet {
       margin-bottom: toRem(58);
     }
   }

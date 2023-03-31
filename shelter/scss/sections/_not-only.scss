@@ -18,6 +18,9 @@
     max-width: toRem(460);
     margin-top: toRem(152);
     text-align: center;
+    @include tablet {
+      margin-top: toRem(152);
+    }
     @include decstope {
       text-align: left;
       margin-top: toRem(163);
@@ -29,7 +32,8 @@
     line-height: 130%;
     letter-spacing: 0.06em;
     color: $color-white;
-    @include decstope {
+    @include tablet {
+      text-align: left;
       font-size: toRem(44);
       letter-spacing: 0;
       margin-bottom: toRem(42);
@@ -39,21 +43,31 @@
     @include text;
     margin-bottom: toRem(42);
     color: $color-light-l;
+    @include tablet {
+      text-align: left;
+    }
   }
   &__button {
     display: inline-block;
     margin-bottom: toRem(105);
+    @include tablet {
+      margin-bottom: toRem(94);
+    }
     @include decstope {
       margin-bottom: 0;
     }
   }
+
   &__img {
     min-width: toRem(260);
+    max-width: toRem(569);
     height: auto;
     margin-left: 13%;
-  }
-  @include decstope {
-    &__img {
+    @include tablet {
+      margin-left: 19%;
+      max-width: toRem(699);
+    }
+    @include decstope {
       width: toRem(698);
       height: toRem(728);
       margin-left: 0;

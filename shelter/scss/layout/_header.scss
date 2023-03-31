@@ -2,7 +2,7 @@
 
 .header {
   padding: toRem(30) toRem(10);
-  @include decstope {
+  @include tablet {
     padding: toRem(30) 0;
   }
   &__wrapper {

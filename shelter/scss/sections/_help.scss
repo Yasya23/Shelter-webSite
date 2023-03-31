@@ -5,7 +5,7 @@
     padding-top: toRem(42);
     padding-bottom: toRem(42);
     text-align: center;
-    @include decstope {
+    @include tablet {
       padding-top: toRem(79);
       padding-bottom: toRem(100);
     }
@@ -13,7 +13,7 @@
   &__title {
     @include subtitle-mobile;
     margin-bottom: toRem(40);
-    @include decstope {
+    @include tablet {
       @include subtitle;
       margin-bottom: toRem(58);
     }
@@ -31,6 +31,9 @@
   justify-content: space-between;
   gap: toRem(28);
   padding: 0 toRem(5);
+  @include tablet {
+    padding: 0 toRem(38);
+  }
   @include decstope {
     padding: 0;
   }
@@ -38,13 +41,32 @@
     @include max-tablet {
       width: toRem(130);
     }
+    @include tablet {
+      width: toRem(170);
+    }
+    @include decstope {
+      width: max-content;
+    }
   }
   &__icon {
     @include max-tablet {
       width: toRem(52);
       height: toRem(52);
     }
+    @include tablet {
+      width: toRem(60);
+      height: toRem(60);
+    }
+    @include decstope {
+      width: max-content;
+      height: max-content;
+    }
   }
+  @include tablet {
+    column-gap: toRem(60);
+    row-gap: toRem(55);
+  }
+
   @include decstope {
     justify-content: center;
     column-gap: toRem(120);
@@ -53,7 +75,7 @@
 
   &__icon {
     margin-bottom: toRem(20);
-    @include decstope {
+    @include tablet {
       margin-bottom: toRem(30);
     }
   }
@@ -62,7 +84,7 @@
     font-size: toRem(15);
     line-height: 110%;
     letter-spacing: 0.06em;
-    @include decstope {
+    @include tablet {
       font-size: toRem(20);
       line-height: 115%;
     }

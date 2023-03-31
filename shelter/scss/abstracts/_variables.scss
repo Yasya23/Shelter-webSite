@@ -1,7 +1,11 @@
 $mobile: toRem(320);
+$max-mobile: toRem(319.99);
 $tablet: toRem(768);
+$max-tablet: toRem(767.99);
 $decstope-small: toRem(991);
+$max-decstope-small: toRem(990.99);
 $decstope: toRem(1280);
+$max-decstope: toRem(1279.98);
 
 $color-primary: #f1cdb3;
 $color-primary-light: #fddcc4;

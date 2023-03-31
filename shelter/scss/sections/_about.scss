@@ -4,10 +4,15 @@
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: toRem(28) 0 toRem(42) 0;
+    @include tablet {
+      padding: toRem(65) 0 toRem(100) 0;
+    }
     @include decstope {
-      flex-wrap: nowrap;
+      flex-direction: row;
       justify-content: space-between;
       padding: toRem(80) toRem(175) toRem(100);
     }
@@ -16,7 +21,7 @@
     max-width: toRem(430);
     padding: toRem(14) 0;
     text-align: justify;
-    @include decstope {
+    @include tablet {
       text-align: left;
     }
   }
@@ -24,7 +29,7 @@
     @include subtitle-mobile;
     margin-bottom: toRem(24);
     text-align: center;
-    @include decstope {
+    @include tablet {
       @include subtitle;
       text-align: left;
     }
@@ -33,14 +38,17 @@
     @include text;
     margin-bottom: toRem(26);
     padding: 0 toRem(15);
+    @include tablet {
+      padding: 0;
+      margin-bottom: toRem(66);
+    }
     @include decstope {
       margin-bottom: 0;
-      padding: 0;
     }
   }
   &__text:not(:last-child) {
     margin-bottom: toRem(22);
-    @include decstope {
+    @include tablet {
       margin-bottom: toRem(25);
     }
   }
@@ -48,9 +56,11 @@
     max-width: toRem(261);
     height: auto;
     order: 3;
-    @include decstope {
+    @include tablet {
       max-width: toRem(300);
       height: auto;
+    }
+    @include decstope {
       order: 0;
     }
   }

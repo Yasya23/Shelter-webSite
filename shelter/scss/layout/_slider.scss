@@ -3,11 +3,15 @@
 .slider {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: toRem(17);
-  @include decstope {
+  @include tablet {
+    flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: center;
+    gap: toRem(0);
+  }
+  @include decstope {
     gap: toRem(53);
   }
   &__icon {
@@ -24,33 +28,32 @@
     &:first-child {
       margin-right: toRem(63);
       order: 2;
-      @include decstope {
+      @include tablet {
         margin-right: 0;
         order: 0;
       }
     }
-    &:last-child {
-      order: 3;
+    @include max-tablet {
+      &:last-child {
+        order: 3;
+      }
     }
   }
 
   &__cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    max-height: toRem(438);
+    overflow-y: hidden;
+    gap: toRem(40);
     @include decstope {
+      max-height: max-content;
+      justify-content: space-between;
       flex-grow: 1;
       padding: 0;
       margin-bottom: 0;
-    }
-  }
-  &__card {
-    max-width: 100vw;
-    &:not(:first-child) {
-      display: none;
-      @include decstope {
-        display: block;
-      }
+      gap: 0;
     }
   }
 }
