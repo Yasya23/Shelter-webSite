@@ -82,8 +82,25 @@
   }
 }
 
+@mixin tablet-2 {
+  @media (min-width: $tablet-2) {
+    @content;
+  }
+}
+
 @mixin max-tablet {
   @media (max-width: $max-tablet) {
+    @content;
+  }
+}
+@mixin decstope-small {
+  @media (min-width: $decstope-small) {
+    @content;
+  }
+}
+
+@mixin max-decstope-small {
+  @media (min-width: $max-decstope-small) {
     @content;
   }
 }

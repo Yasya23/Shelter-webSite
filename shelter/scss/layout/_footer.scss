@@ -5,50 +5,47 @@
   width: 100%;
   &__wrapper {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    padding-top: toRem(29);
+    @include max-tablet {
+      align-items: center;
+      padding-top: toRem(14);
+      row-gap: toRem(8);
+    }
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-top: toRem(13);
+      column-gap: toRem(60);
+      row-gap: toRem(30);
+    }
     @include decstope {
       justify-content: space-between;
-      padding-top: toRem(40);
+      padding-top: toRem(41);
     }
   }
+
   &__contacts {
-    margin-bottom: toRem(8);
-    @include tablet {
-      padding-top: toRem(17);
-    }
+    max-width: toRem(279);
     @include max-tablet {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding-top: toRem(17);
+    }
+    @include tablet {
+      @include max-decstope {
+        align-items: flex-start;
+        margin-bottom: 0;
+        padding-top: toRem(14);
+      }
     }
     @include decstope {
-      max-width: toRem(279);
-      margin-bottom: 0;
-    }
-  }
-
-  &__location {
-    max-width: toRem(300);
-    @include tablet {
       padding-top: toRem(16);
     }
   }
 
-  &__title {
-    @include subtitle-mobile;
-    margin-bottom: toRem(33);
-    color: $color-white;
-    text-align: center;
-    @include decstope {
-      @include subtitle;
-      margin-bottom: toRem(32);
-      text-align: left;
-      width: 100%;
-    }
-  }
   &__contact {
     display: flex;
     align-items: center;
@@ -72,6 +69,9 @@
     @include max-tablet {
       justify-content: center;
     }
+    @include tablet {
+      justify-content: left;
+    }
   }
 
   &__location &__contact {
@@ -79,13 +79,41 @@
       justify-content: left;
       margin-bottom: toRem(34);
     }
+    @include max-decstope {
+      justify-content: left;
+      margin-bottom: toRem(29);
+    }
+  }
+
+  &__location {
+    max-width: toRem(300);
+    @include tablet {
+      padding-top: toRem(16);
+    }
+  }
+
+  &__title {
+    @include subtitle-mobile;
+    margin-bottom: toRem(33);
+    color: $color-white;
+    text-align: center;
+    @include tablet {
+      @include subtitle;
+      margin-bottom: toRem(32);
+      text-align: left;
+      width: 100%;
+    }
   }
 
   &__location &__title {
     @include max-tablet {
-      max-width: toRem(250);
+      max-width: toRem(240);
       margin: 0 auto;
       margin-bottom: toRem(37);
+    }
+    @include tablet {
+      margin-bottom: toRem(32);
+      max-width: 100%;
     }
   }
 
@@ -95,9 +123,9 @@
 
   &__img {
     width: toRem(260);
-    @include decstope {
+    @include tablet {
       width: toRem(300);
-      height: tpRem(310);
+      height: toRem(310);
     }
   }
 }

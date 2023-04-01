@@ -9,7 +9,7 @@
     align-items: center;
     padding: toRem(28) 0 toRem(42) 0;
     @include tablet {
-      padding: toRem(65) 0 toRem(100) 0;
+      padding: toRem(65) toRem(140) toRem(100);
     }
     @include decstope {
       flex-direction: row;
@@ -18,11 +18,17 @@
     }
   }
   &__content {
-    max-width: toRem(430);
+    max-width: 100%;
     padding: toRem(14) 0;
     text-align: justify;
     @include tablet {
-      text-align: left;
+      @include max-decstope {
+        min-width: toRem(430);
+        text-align: left;
+      }
+    }
+    @include decstope {
+      max-width: toRem(430);
     }
   }
   &__title {
