@@ -1061,6 +1061,12 @@ main {
   padding-top: 2.63rem;
   padding-bottom: 2.63rem;
 }
+@media (min-width: 48rem) {
+  .in-addition__wrapper {
+    padding-top: 5rem;
+    padding-bottom: 6.31rem;
+  }
+}
 @media (min-width: 80rem) {
   .in-addition__wrapper {
     -webkit-box-orient: horizontal;
@@ -1080,7 +1086,7 @@ main {
   max-width: 23.75rem;
   text-align: center;
 }
-@media (min-width: 80rem) {
+@media (min-width: 48rem) {
   .in-addition__content {
     text-align: left;
   }
@@ -1091,7 +1097,7 @@ main {
   letter-spacing: 0.06em;
   margin-bottom: 1.44rem;
 }
-@media (min-width: 80rem) {
+@media (min-width: 48rem) {
   .in-addition__title {
     font-size: 2.19rem;
     line-height: 130%;
@@ -1103,7 +1109,7 @@ main {
   margin-bottom: 1.5rem;
   font-size: 0.94rem;
 }
-@media (min-width: 80rem) {
+@media (min-width: 48rem) {
   .in-addition__subtitle {
     margin-bottom: 1.25rem;
     letter-spacing: 0.06em;
@@ -1126,7 +1132,7 @@ main {
     background-color: #fddcc4;
   }
 }
-@media (min-width: 80rem) {
+@media (min-width: 48rem) {
   .in-addition__card {
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
@@ -1145,15 +1151,22 @@ main {
   line-height: 150%;
   color: #b2b2b2;
 }
-@media (min-width: 48rem) {
-  .in-addition__text {
-    text-align: left;
-  }
-}
 @media (max-width: 48rem) {
   .in-addition__text {
     margin-bottom: 0.75rem;
     padding: 0 0.63rem;
+  }
+}
+@media (min-width: 48rem) {
+  .in-addition__text {
+    text-align: left;
+    margin-bottom: 1.75rem;
+    padding: 0;
+  }
+}
+@media (min-width: 80rem) {
+  .in-addition__text {
+    margin-bottom: 0;
   }
 }
 

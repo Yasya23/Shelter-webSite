@@ -11,6 +11,10 @@
     gap: toRem(30);
     padding-top: toRem(42);
     padding-bottom: toRem(42);
+    @include tablet {
+      padding-top: toRem(80);
+      padding-bottom: toRem(101);
+    }
     @include decstope {
       flex-direction: row;
       padding-top: toRem(80);
@@ -25,14 +29,14 @@
   &__content {
     max-width: toRem(380);
     text-align: center;
-    @include decstope {
+    @include tablet {
       text-align: left;
     }
   }
   &__title {
     @include subtitle-mobile;
     margin-bottom: toRem(23);
-    @include decstope {
+    @include tablet {
       @include subtitle;
       margin-bottom: toRem(20);
     }
@@ -40,7 +44,7 @@
   &__subtitle {
     margin-bottom: toRem(24);
     font-size: toRem(15);
-    @include decstope {
+    @include tablet {
       margin-bottom: toRem(20);
       letter-spacing: 0.06em;
     }
@@ -60,7 +64,7 @@
         background-color: $color-primary-light;
       }
     }
-    @include decstope {
+    @include tablet {
       margin-bottom: toRem(20);
       font-size: toRem(20);
       line-height: 115%;
@@ -76,12 +80,17 @@
     text-align: justify;
     line-height: 150%;
     color: $color-dark-m;
-    @include tablet {
-      text-align: left;
-    }
     @include max-tablet {
       margin-bottom: toRem(12);
       padding: 0 toRem(10);
+    }
+    @include tablet {
+      text-align: left;
+      margin-bottom: toRem(28);
+      padding: 0;
+    }
+    @include decstope {
+      margin-bottom: 0;
     }
   }
 }
