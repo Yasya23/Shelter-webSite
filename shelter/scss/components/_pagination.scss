@@ -20,8 +20,10 @@
     transition: $transition;
     background-color: inherit;
     cursor: pointer;
-    &:not(.pagination__btn_inactive):not(.pagination__number):hover {
-      background-color: $color-primary;
+    @include hover {
+      &:not(.pagination__btn_inactive):not(.pagination__number):hover {
+        background-color: $color-primary;
+      }
     }
     &_inactive {
       border-color: $color-light-l;

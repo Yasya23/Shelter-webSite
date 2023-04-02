@@ -187,14 +187,16 @@ h6 {
   transition: all ease-in-out 0.3s;
   cursor: pointer;
 }
-.card:hover {
-  background-color: #ffffff;
-  -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-          box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-}
-.card:hover .card__button {
-  border: 2px solid #fddcc4;
-  background-color: #fddcc4;
+@media (hover: hover) {
+  .card:hover {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+            box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  }
+  .card:hover .card__button {
+    border: 2px solid #fddcc4;
+    background-color: #fddcc4;
+  }
 }
 .card:active .card__button {
   background-color: #ffffff;
@@ -240,8 +242,10 @@ h6 {
   background-color: inherit;
   cursor: pointer;
 }
-.pagination__btn:not(.pagination__btn_inactive):not(.pagination__number):hover {
-  background-color: #f1cdb3;
+@media (hover: hover) {
+  .pagination__btn:not(.pagination__btn_inactive):not(.pagination__number):hover {
+    background-color: #f1cdb3;
+  }
 }
 .pagination__btn_inactive {
   border-color: #cdcdcd;
@@ -620,9 +624,11 @@ main {
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
 }
-.slider__icon:hover {
-  border: 2px solid #fddcc4;
-  background-color: #fddcc4;
+@media (hover: hover) {
+  .slider__icon:hover {
+    border: 2px solid #fddcc4;
+    background-color: #fddcc4;
+  }
 }
 .slider__icon:first-child {
   margin-right: 3.94rem;
@@ -687,8 +693,10 @@ main {
 .header-main .logo__subtitle {
   color: #ffffff;
 }
-.header-main .logo:hover {
-  opacity: 0.8;
+@media (hover: hover) {
+  .header-main .logo:hover {
+    opacity: 0.8;
+  }
 }
 @media (min-width: 48rem) {
   .header-main .navigation__link {
@@ -697,6 +705,8 @@ main {
   .header-main .navigation__link_active {
     color: #fafafa;
   }
+}
+@media (min-width: 48rem) and (hover: hover) {
   .header-main .navigation__link:hover {
     color: #fafafa;
   }
@@ -1255,11 +1265,15 @@ main {
 .header-pets .logo__subtitle {
   color: #292929;
 }
-.header-pets .logo:hover {
-  color: #292929;
+@media (hover: hover) {
+  .header-pets .logo:hover {
+    color: #292929;
+  }
 }
-.header-pets .navigation__link:hover {
-  color: #292929;
+@media (hover: hover) {
+  .header-pets .navigation__link:hover {
+    color: #292929;
+  }
 }
 .header-pets .header__popup_line {
   background-color: #000000;

@@ -21,9 +21,11 @@
     color: $color-dark-3xl;
     cursor: pointer;
     transition: $transition;
-    &:hover {
-      border: 2px solid $color-primary-light;
-      background-color: $color-primary-light;
+    @include hover {
+      &:hover {
+        border: 2px solid $color-primary-light;
+        background-color: $color-primary-light;
+      }
     }
     &:first-child {
       margin-right: toRem(63);

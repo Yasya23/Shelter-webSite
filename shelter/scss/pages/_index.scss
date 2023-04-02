@@ -10,8 +10,10 @@
     &__subtitle {
       color: $color-white;
     }
-    &:hover {
-      opacity: 0.8;
+    @include hover {
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
   @include tablet {
@@ -22,11 +24,13 @@
           color: $color-light-s;
         }
       }
-      &__link:hover {
-        color: $color-light-s;
-      }
-      &__link:active {
-        color: $color-primary;
+      @include hover {
+        &__link:hover {
+          color: $color-light-s;
+        }
+        &__link:active {
+          color: $color-primary;
+        }
       }
     }
   }
