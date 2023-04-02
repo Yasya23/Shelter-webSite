@@ -11,8 +11,10 @@
   line-height: 130%;
   transition: $transition;
   @include hover {
-    background-color: $color-primary-light;
-    color: $color-dark-one;
+    &:hover {
+      background-color: $color-primary-light;
+      color: $color-dark-one;
+    }
   }
   &:active {
     background-color: $color-primary;
