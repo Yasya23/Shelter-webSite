@@ -2,11 +2,24 @@
 
 .friends {
   background-color: $color-light-1;
-  padding-top: toRem(80);
-  padding-bottom: toRem(101);
+  padding: toRem(42) 0 toRem(41);
   text-align: center;
+  @include tablet {
+    padding: toRem(79) 0 toRem(76) 0;
+  }
+  @include decstope {
+    padding: toRem(80) 0 toRem(101) 0;
+  }
   &__title {
-    margin-bottom: toRem(57);
+    @include subtitle-mobile;
+    margin-bottom: toRem(40);
+    @include tablet {
+      @include subtitle;
+      margin-bottom: toRem(29);
+    }
+    @include decstope {
+      margin-bottom: toRem(57);
+    }
   }
   &__list {
     display: flex;
@@ -15,7 +28,15 @@
     flex-wrap: wrap;
     column-gap: toRem(39);
     row-gap: toRem(27);
-    margin-bottom: toRem(57);
+    max-height: toRem(1370);
+    overflow-y: hidden;
+    margin-bottom: toRem(38);
+    @include tablet {
+      margin-bottom: toRem(35);
+    }
+    @include decstope {
+      margin-bottom: toRem(57);
+    }
   }
   &__card {
   }

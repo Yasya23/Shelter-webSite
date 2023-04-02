@@ -13,6 +13,11 @@
       color: $color-dark-3xl;
     }
   }
+  .header__popup {
+    &_line {
+      background-color: $color-black;
+    }
+  }
 }
 
 @import '../sections/friends';

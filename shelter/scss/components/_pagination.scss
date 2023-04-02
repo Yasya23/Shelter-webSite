@@ -3,7 +3,10 @@
 .pagination {
   display: flex;
   justify-content: center;
-  column-gap: toRem(20);
+  column-gap: toRem(10);
+  @include tablet {
+    column-gap: toRem(20);
+  }
   &__btn {
     display: flex;
     justify-content: center;

@@ -12,11 +12,6 @@
   letter-spacing: 0.06em;
 }
 
-@mixin subtitle-mobile {
-  font-size: toRem(25);
-  line-height: 130%;
-  letter-spacing: 0.06em;
-}
 // general text values
 
 @mixin text {
