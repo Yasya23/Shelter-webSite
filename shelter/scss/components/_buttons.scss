@@ -1,6 +1,7 @@
 /* components-buttons */
 
 .button {
+  display: inline-block;
   padding: toRem(15) toRem(45);
   border-radius: toRem(100);
   background-color: $color-primary;
@@ -9,9 +10,11 @@
   letter-spacing: 0.06em;
   line-height: 130%;
   transition: $transition;
-  &:hover {
-    background-color: $color-primary-light;
-    color: $color-dark-one;
+  @include hover {
+    &:hover {
+      background-color: $color-primary-light;
+      color: $color-dark-one;
+    }
   }
   &:active {
     background-color: $color-primary;

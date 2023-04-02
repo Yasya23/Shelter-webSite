@@ -4,40 +4,70 @@
   background-color: $color-light-1;
   &__wrapper {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     gap: toRem(30);
-    padding-top: toRem(80);
-    padding-bottom: toRem(99);
+    padding-top: toRem(42);
+    padding-bottom: toRem(42);
+    @include tablet {
+      padding-top: toRem(80);
+      padding-bottom: toRem(101);
+    }
+    @include decstope {
+      flex-direction: row;
+      padding-top: toRem(80);
+      padding-bottom: toRem(99);
+    }
   }
   &__img {
-    max-width: 100%;
+    width: toRem(505);
+    height: auto;
+    max-width: 88%;
   }
   &__content {
     max-width: toRem(380);
-    text-align: left;
+    text-align: center;
+    @include tablet {
+      text-align: left;
+    }
   }
   &__title {
-    max-width: toRem(300);
-    margin-bottom: toRem(20);
+    @include subtitle-mobile;
+    margin-bottom: toRem(23);
+    @include tablet {
+      @include subtitle;
+      margin-bottom: toRem(20);
+    }
   }
   &__subtitle {
-    margin-bottom: toRem(20);
+    margin-bottom: toRem(24);
     font-size: toRem(15);
-    letter-spacing: 0.06em;
+    @include tablet {
+      margin-bottom: toRem(20);
+      letter-spacing: 0.06em;
+    }
   }
   &__card {
     display: inline-block;
-    margin-bottom: toRem(20);
+    margin-bottom: toRem(18);
     padding: toRem(10) toRem(15);
     background-color: $color-primary;
     border-radius: toRem(9);
-    font-size: toRem(20);
-    line-height: 115%;
+    font-size: toRem(15);
+    line-height: 130%;
     letter-spacing: 0.06em;
     transition: $transition;
-    &:hover {
-      background-color: $color-primary-light;
+    @include hover {
+      &:hover {
+        background-color: $color-primary-light;
+      }
+    }
+    @include tablet {
+      margin-bottom: toRem(20);
+      font-size: toRem(20);
+      line-height: 115%;
     }
   }
   &__icon {
@@ -47,7 +77,20 @@
   &__text {
     @include arial-italic;
     font-size: toRem(12);
+    text-align: justify;
     line-height: 150%;
     color: $color-dark-m;
+    @include max-tablet {
+      margin-bottom: toRem(12);
+      padding: 0 toRem(10);
+    }
+    @include tablet {
+      text-align: left;
+      margin-bottom: toRem(28);
+      padding: 0;
+    }
+    @include decstope {
+      margin-bottom: 0;
+    }
   }
 }

@@ -5,6 +5,13 @@
   line-height: 130%;
   letter-spacing: 0.06em;
 }
+
+@mixin subtitle-mobile {
+  font-size: toRem(25);
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
 // general text values
 
 @mixin text {
@@ -43,4 +50,70 @@
   font-family: 'Arial';
   font-style: italic;
   font-weight: normal;
+}
+
+//media
+@mixin mobile-small {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin max-mobile {
+  @media (max-width: $max-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin tablet-2 {
+  @media (min-width: $tablet-2) {
+    @content;
+  }
+}
+
+@mixin max-tablet {
+  @media (max-width: $max-tablet) {
+    @content;
+  }
+}
+@mixin decstope-small {
+  @media (min-width: $decstope-small) {
+    @content;
+  }
+}
+
+@mixin max-decstope-small {
+  @media (min-width: $max-decstope-small) {
+    @content;
+  }
+}
+
+@mixin decstope {
+  @media (min-width: $decstope) {
+    @content;
+  }
+}
+
+@mixin max-decstope {
+  @media (max-width: $max-decstope) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
 }

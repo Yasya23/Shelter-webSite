@@ -2,9 +2,18 @@
 
 .slider {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: toRem(53);
+  flex-wrap: wrap;
+  gap: toRem(17);
+  @include tablet {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: toRem(0);
+  }
+  @include decstope {
+    gap: toRem(53);
+  }
   &__icon {
     padding: toRem(14) toRem(16);
     border: 2px solid $color-primary;
@@ -12,14 +21,41 @@
     color: $color-dark-3xl;
     cursor: pointer;
     transition: $transition;
-    &:hover {
-      border: 2px solid $color-primary-light;
-      background-color: $color-primary-light;
+    @include hover {
+      &:hover {
+        border: 2px solid $color-primary-light;
+        background-color: $color-primary-light;
+      }
+    }
+    &:first-child {
+      margin-right: toRem(63);
+      order: 2;
+      @include tablet {
+        margin-right: 0;
+        order: 0;
+      }
+    }
+    @include max-tablet {
+      &:last-child {
+        order: 3;
+      }
     }
   }
+
   &__cards {
     display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: toRem(438);
+    overflow-y: hidden;
+    gap: toRem(40);
+    @include decstope {
+      max-height: max-content;
+      justify-content: space-between;
+      flex-grow: 1;
+      padding: 0;
+      margin-bottom: 0;
+      gap: 0;
+    }
   }
 }

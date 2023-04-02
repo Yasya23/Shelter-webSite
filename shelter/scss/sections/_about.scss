@@ -3,18 +3,71 @@
 .about {
   &__wrapper {
     display: flex;
-    justify-content: space-between;
-    padding: toRem(80) toRem(175) toRem(100);
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: toRem(28) 0 toRem(42) 0;
+    @include tablet {
+      padding: toRem(65) toRem(140) toRem(100);
+    }
+    @include decstope {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: toRem(80) toRem(175) toRem(100);
+    }
   }
   &__content {
-    max-width: toRem(430);
+    max-width: 100%;
     padding: toRem(14) 0;
+    text-align: justify;
+    @include tablet {
+      @include max-decstope {
+        min-width: toRem(430);
+        text-align: left;
+      }
+    }
+    @include decstope {
+      max-width: toRem(430);
+    }
   }
   &__title {
-    max-width: toRem(370);
+    @include subtitle-mobile;
     margin-bottom: toRem(24);
+    text-align: center;
+    @include tablet {
+      @include subtitle;
+      text-align: left;
+    }
+  }
+  &__text {
+    @include text;
+    margin-bottom: toRem(26);
+    padding: 0 toRem(15);
+    @include tablet {
+      padding: 0;
+      margin-bottom: toRem(66);
+    }
+    @include decstope {
+      margin-bottom: 0;
+    }
   }
   &__text:not(:last-child) {
-    margin-bottom: toRem(25);
+    margin-bottom: toRem(22);
+    @include tablet {
+      margin-bottom: toRem(25);
+    }
+  }
+  &__img {
+    max-width: toRem(261);
+    height: auto;
+    order: 3;
+    @include tablet {
+      max-width: toRem(300);
+      height: auto;
+    }
+    @include decstope {
+      order: 0;
+    }
   }
 }

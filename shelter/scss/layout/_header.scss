@@ -1,10 +1,36 @@
 /*layout-header*/
 
 .header {
-  padding: toRem(30) 0;
+  padding: toRem(30) toRem(10);
+  @include tablet {
+    padding: toRem(30) 0;
+  }
   &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__popup {
+    width: toRem(30);
+    height: toRem(22);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    &_line {
+      width: toRem(30);
+      height: toRem(2);
+      background-color: $color-primary;
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+  &__navigation {
+    display: none;
+    @include tablet {
+      display: block;
+    }
   }
 }

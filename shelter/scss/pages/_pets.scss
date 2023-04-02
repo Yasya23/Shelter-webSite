@@ -4,13 +4,22 @@
     &__subtitle {
       color: $color-dark-3xl;
     }
-    &:hover {
-      color: $color-dark-3xl;
+    @include hover {
+      &:hover {
+        color: $color-dark-3xl;
+      }
     }
   }
   & .navigation {
-    &__link:hover {
-      color: $color-dark-3xl;
+    @include hover {
+      &__link:hover {
+        color: $color-dark-3xl;
+      }
+    }
+  }
+  .header__popup {
+    &_line {
+      background-color: $color-black;
     }
   }
 }

@@ -4,27 +4,86 @@
   background-image: $background-start;
   width: 100%;
   margin-top: toRem(-122);
+  overflow-x: hidden;
   &__wrapper {
     display: flex;
-    justify-content: space-between;
-    padding-top: toRem(182);
+    flex-wrap: wrap;
+    justify-content: center;
+    @include decstope-small {
+      padding-top: toRem(182);
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
   }
   &__content {
-    max-width: toRem(460);
-    margin-top: toRem(163);
+    margin-top: toRem(152);
+    text-align: center;
+    @include tablet {
+      max-width: toRem(460);
+    }
+    @include tablet-2 {
+      @include max-decstope {
+        min-width: toRem(460);
+        max-width: 100%;
+      }
+    }
+    @include decstope-small {
+      max-width: 100%;
+      text-align: left;
+      margin-top: toRem(163);
+    }
+    @include decstope {
+      max-width: toRem(460);
+    }
   }
   &__title {
-    max-width: toRem(310);
-    margin-bottom: toRem(42);
-    font-size: toRem(44);
+    margin-bottom: toRem(40);
+    font-size: toRem(25);
     line-height: 130%;
+    letter-spacing: 0.06em;
     color: $color-white;
+    @include tablet {
+      text-align: left;
+      font-size: toRem(44);
+      letter-spacing: 0;
+      margin-bottom: toRem(42);
+    }
   }
   &__text {
+    @include text;
     margin-bottom: toRem(42);
-    color: $color-light-s;
+    color: $color-light-l;
+    @include tablet {
+      text-align: left;
+    }
   }
   &__button {
     display: inline-block;
+    margin-bottom: toRem(105);
+    @include tablet {
+      margin-bottom: toRem(99);
+    }
+    @include decstope {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    min-width: toRem(260);
+    max-width: toRem(569);
+    height: auto;
+    margin-left: 13%;
+    @include tablet {
+      min-width: toRem(569);
+      margin-left: 19%;
+    }
+    @include decstope-small {
+      margin-left: 0;
+    }
+    @include decstope {
+      width: toRem(698);
+      height: toRem(728);
+      max-width: 100%;
+    }
   }
 }

@@ -10,23 +10,28 @@
     &__subtitle {
       color: $color-white;
     }
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-
-  & .navigation {
-    &__link {
-      color: $color-light-l;
-      &_active {
-        color: $color-light-s;
+    @include hover {
+      &:hover {
+        opacity: 0.8;
       }
     }
-    &__link:hover {
-      color: $color-light-s;
-    }
-    &__link:active {
-      color: $color-primary;
+  }
+  @include tablet {
+    & .navigation {
+      &__link {
+        color: $color-light-l;
+        &_active {
+          color: $color-light-s;
+        }
+      }
+      @include hover {
+        &__link:hover {
+          color: $color-light-s;
+        }
+        &__link:active {
+          color: $color-primary;
+        }
+      }
     }
   }
 }

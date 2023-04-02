@@ -3,8 +3,11 @@
 .pagination {
   display: flex;
   justify-content: center;
-  column-gap: toRem(20);
-  &__icon {
+  column-gap: toRem(10);
+  @include tablet {
+    column-gap: toRem(20);
+  }
+  &__btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,10 +17,13 @@
     border-radius: 100px;
     font-size: toRem(20px);
     color: $color-dark-3xl;
-    cursor: pointer;
     transition: $transition;
-    &:not(.pagination__icon_inactive):not(.pagination__number):hover {
-      background-color: $color-primary;
+    background-color: inherit;
+    cursor: pointer;
+    @include hover {
+      &:not(.pagination__btn_inactive):not(.pagination__number):hover {
+        background-color: $color-primary;
+      }
     }
     &_inactive {
       border-color: $color-light-l;
@@ -26,6 +32,7 @@
     }
   }
   &__number {
+    cursor: default;
     background-color: $color-primary;
   }
 }
