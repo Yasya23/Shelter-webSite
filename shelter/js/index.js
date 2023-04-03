@@ -41,8 +41,8 @@ function selectRandomCards(sourceArray) {
   shownAnimalsNames = [];
   const selectedCards = [];
   const maxCardsInSlider = 3;
+  const arr = [...sourceArray];
   for (let i = 0; i < maxCardsInSlider; i++) {
-    const arr = [...sourceArray];
     const randomIndex = Math.floor(Math.random() * arr.length);
     const card = arr.splice(randomIndex, 1)[0];
     shownAnimalsNames.push(card.name);
