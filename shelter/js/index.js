@@ -3,27 +3,17 @@ import animals from './data.js';
 document.addEventListener('click', (e) => {
   if (!e.target.id) return;
   if (e.target.id === 'previous-slide' || e.target.id === 'next-slide')
-    renderSlides(e.target.id);
+    changeSlides(e.target.id);
 });
 
-let prevScreenWidth = window.innerWidth;
-let numCardsToShow = calculateNumCardsToShow();
-
-window.onresize = function () {
+const numCardsOnScreen = () => {
   const screenWidth = window.innerWidth;
-  if (screenWidth !== prevScreenWidth) {
-    numCardsToShow = calculateNumCardsToShow();
-    selectRandomCards(numCardsToShow, animals);
-    prevScreenWidth = screenWidth;
-  }
+  return screenWidth < 601 ? 1 : screenWidth < 1053 ? 2 : 3;
 };
 
-function calculateNumCardsToShow() {
-  const screenWidth = window.innerWidth;
-  let num = 0;
-  screenWidth < 601 ? (num = 1) : screenWidth < 1053 ? (num = 2) : (num = 3);
-  return num;
-}
+const selectedCards = [];
+const previousSelectedCards = [];
+const nextSelectedCards = [];
 
 function renderCards(cardsArray) {
   console.log(cardsArray);
@@ -39,9 +29,9 @@ function renderCards(cardsArray) {
   cardsList.innerHTML = cards;
 }
 
-function selectRandomCards(numCards, sourceArray) {
-  const selectedCards = [];
-  for (let i = 0; i < numCards; i++) {
+function selectRandomCards(sourceArray) {
+  const maxCardsInSlider = 3;
+  for (let i = 0; i < maxCardsInSlider; i++) {
     const randomIndex = Math.floor(Math.random() * sourceArray.length);
     const card = sourceArray.splice(randomIndex, 1)[0];
     selectedCards.push(card);
@@ -49,7 +39,17 @@ function selectRandomCards(numCards, sourceArray) {
   renderCards(selectedCards);
 }
 
-selectRandomCards(numCardsToShow, animals);
+selectRandomCards(animals);
+
+// let prevScreenWidth = window.innerWidth;
+// window.onresize = function () {
+//   const screenWidth = window.innerWidth;
+//   if (screenWidth !== prevScreenWidth) {
+//     numCardsToShow = calculateNumCardsToShow();
+//     renderCards(selectedCards, numCardsToShow);
+//     prevScreenWidth = screenWidth;
+//   }
+// };
 
 // function showScore() {
 //   let score = `Все пункты выполнены - 100`;
