@@ -666,9 +666,7 @@ main {
 }
 @media (min-width: 80rem) {
   .slider__cards {
-    max-height: -webkit-max-content;
-    max-height: -moz-max-content;
-    max-height: max-content;
+    max-height: 27.38rem;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
