@@ -3,26 +3,33 @@ import animals from './data.js';
 document.addEventListener('click', (e) => {
   if (!e.target.id) return;
   if (e.target.id === 'previous-slide' || e.target.id === 'next-slide')
-    changeSlides(e.target.id);
+    selectRandomCards(filterByShownCards());
+  preveousShownCards = shownCards;
 });
+
+function filterByShownCards() {
+  const filteredCards = animals.filter(
+    (card) => !shownAnimalsNames.includes(card.name)
+  );
+  return filteredCards;
+}
 
 const numCardsOnScreen = () => {
   const screenWidth = window.innerWidth;
   return screenWidth < 601 ? 1 : screenWidth < 1053 ? 2 : 3;
 };
 
-const selectedCards = [];
-const previousSelectedCards = [];
-const nextSelectedCards = [];
+let shownAnimalsNames = [];
+let shownCards = [];
+let preveousShownCards = [];
 
 function renderCards(cardsArray) {
-  console.log(cardsArray);
   let cardsList = document.querySelector('.slider__cards');
   let cards = '';
   for (let i = 0; i < cardsArray.length; i++) {
     cards += `<li class="slider__card card">
                   <img class="card__img" src=${cardsArray[i].img} alt=${cardsArray[i].alt}>
-                  <p class="card__title">Katrine</p>
+                  <p class="card__title">${cardsArray[i].name}</p>
                   <button class="card__button button button-outline">Learn more</button>
                 </li>`;
   }
@@ -30,13 +37,23 @@ function renderCards(cardsArray) {
 }
 
 function selectRandomCards(sourceArray) {
+  console.log(sourceArray);
+  shownAnimalsNames = [];
+  const selectedCards = [];
   const maxCardsInSlider = 3;
   for (let i = 0; i < maxCardsInSlider; i++) {
-    const randomIndex = Math.floor(Math.random() * sourceArray.length);
-    const card = sourceArray.splice(randomIndex, 1)[0];
+    const arr = [...sourceArray];
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    const card = arr.splice(randomIndex, 1)[0];
+    shownAnimalsNames.push(card.name);
     selectedCards.push(card);
   }
+  shownCards = selectedCards;
   renderCards(selectedCards);
+}
+
+function switchCards(direction) {
+  console.log(direction);
 }
 
 selectRandomCards(animals);
