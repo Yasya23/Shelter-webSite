@@ -671,12 +671,12 @@ main {
   gap: 2.5rem;
 }
 .slider__cards.animation-previous {
-  -webkit-animation: previous 1.5s ease-in-out;
-          animation: previous 1.5s ease-in-out;
+  -webkit-animation: previous 1.5s ease-out;
+          animation: previous 1.5s ease-out;
 }
 .slider__cards.animation-next {
-  -webkit-animation: next 1.5s ease-in-out;
-          animation: next 1.5s ease-in-out;
+  -webkit-animation: next 1.5s ease-out;
+          animation: next 1.5s ease-out;
 }
 @media (min-width: 80rem) {
   .slider__cards {
@@ -694,31 +694,31 @@ main {
 }
 @-webkit-keyframes next {
   from {
+    opacity: 0.2;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
     opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0);
-  }
-  to {
-    opacity: 0.3;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
   }
 }
 @keyframes next {
   from {
+    opacity: 0.2;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
     opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-  to {
-    opacity: 0.3;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
 }
 @-webkit-keyframes previous {
   from {
-    opacity: 0.3;
+    opacity: 0.2;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
   }
@@ -730,7 +730,7 @@ main {
 }
 @keyframes previous {
   from {
-    opacity: 0.3;
+    opacity: 0.2;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
   }

@@ -54,10 +54,10 @@
     gap: toRem(40);
 
     &.animation-previous {
-      animation: previous 1.5s ease-in-out;
+      animation: previous 1.5s ease-out;
     }
     &.animation-next {
-      animation: next 1.5s ease-in-out;
+      animation: next 1.5s ease-out;
     }
 
     @include decstope {
@@ -71,18 +71,18 @@
 
     @keyframes next {
       from {
-        opacity: 1;
-        transform: translateX(0);
+        opacity: 0.2;
+        transform: translateX(-100%);
       }
       to {
-        opacity: 0.3;
-        transform: translateX(100%);
+        opacity: 1;
+        transform: translateX(0);
       }
     }
   }
   @keyframes previous {
     from {
-      opacity: 0.3;
+      opacity: 0.2;
       transform: translateX(100%);
     }
     to {
