@@ -1,6 +1,5 @@
 import animals from './data.js';
 
-let shownAnimalsNames = [];
 let shownCards = [];
 let previousShownCards = [];
 let active = 0;
@@ -9,18 +8,22 @@ let animationClass = 'animation-next';
 function actionWithSlider(direction) {
   if (direction === 'next-slide') {
     if (active < 1) active++;
+    // console.log(active);
     animationClass = 'animation-next';
   }
   if (direction === 'previous-slide') {
     if (active > -1) active--;
+    // console.log(active);
     animationClass = 'animation-previous';
   }
-  active === 0
+  console.log(previousShownCards);
+  active == 0
     ? renderCards(previousShownCards)
     : selectRandomCards(filterByShownCards());
 }
 
 function filterByShownCards() {
+  const shownAnimalsNames = shownCards.map((card) => card.name);
   const filteredCards = animals.filter(
     (card) => !shownAnimalsNames.includes(card.name)
   );
@@ -28,6 +31,7 @@ function filterByShownCards() {
 }
 
 function renderCards(cardsArray) {
+  shownCards = cardsArray;
   if (document.querySelector('.slider__cards')) {
     document.querySelector('.slider__cards').remove();
   }
@@ -46,11 +50,9 @@ function renderCards(cardsArray) {
                 </li>`;
   }
   cardsList.innerHTML = cards;
-  animation();
 }
 
 function selectRandomCards(sourceArray) {
-  shownAnimalsNames = [];
   const selectedCards = [];
   previousShownCards = [...shownCards];
   const maxCardsInSlider = 3;
@@ -58,19 +60,9 @@ function selectRandomCards(sourceArray) {
   for (let i = 0; i < maxCardsInSlider; i++) {
     const randomIndex = Math.floor(Math.random() * arr.length);
     const card = arr.splice(randomIndex, 1)[0];
-    shownAnimalsNames.push(card.name);
     selectedCards.push(card);
   }
-  shownCards = selectedCards;
-  renderCards(shownCards);
-}
-
-function animation() {
-  const cardsList = document.querySelector('.slider__cards');
-  const cardsWidth = cardsList.offsetWidth;
-  const currentPosition = cardsList.style.transform || 'translateX(0)';
-  const newPosition = `translateX(calc(${currentPosition} - ${cardsWidth}px))`;
-  cardsList.style.transform = newPosition;
+  renderCards(selectedCards);
 }
 
 selectRandomCards(animals);
