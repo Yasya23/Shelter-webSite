@@ -3,20 +3,18 @@ import animals from './data.js';
 let shownAnimalsNames = [];
 let shownCards = [];
 let previousShownCards = [];
-let active = 1;
+let active = 0;
 
 function actionWithSlider(direction) {
-  direction === 'previous-slide' ? active-- : active++;
-  console.log(active);
-  if (active < 0 || active > 2) {
-    console.log(1);
-    active = 1;
-    previousShownCards = shownCards.slice();
-    selectRandomCards(filterByShownCards());
-  } else {
-    console.log(previousShownCards);
-    renderCards(previousShownCards);
+  if (direction === 'next-slide') {
+    if (active < 1) active++;
   }
+  if (direction === 'previous-slide') {
+    if (active > -1) active--;
+  }
+  active === 0
+    ? renderCards(previousShownCards)
+    : selectRandomCards(filterByShownCards());
 }
 
 function filterByShownCards() {
@@ -42,7 +40,7 @@ function renderCards(cardsArray) {
 function selectRandomCards(sourceArray) {
   shownAnimalsNames = [];
   const selectedCards = [];
-  previousShownCards = shownCards;
+  previousShownCards = [...shownCards];
   const maxCardsInSlider = 3;
   const arr = [...sourceArray];
   for (let i = 0; i < maxCardsInSlider; i++) {
