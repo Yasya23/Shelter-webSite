@@ -41,7 +41,10 @@
       }
     }
   }
-
+  &__wrapper {
+    flex-grow: 1;
+    overflow: hidden;
+  }
   &__cards {
     display: flex;
     flex-wrap: wrap;
@@ -49,6 +52,14 @@
     max-height: toRem(438);
     overflow-y: hidden;
     gap: toRem(40);
+
+    &.animation-previous {
+      animation: previous 1.5s ease-in-out;
+    }
+    &.animation-next {
+      animation: next 1.5s ease-in-out;
+    }
+
     @include decstope {
       max-height: toRem(438);
       justify-content: space-between;
@@ -56,6 +67,27 @@
       padding: 0;
       margin-bottom: 0;
       gap: 0;
+    }
+
+    @keyframes next {
+      from {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      to {
+        opacity: 0.3;
+        transform: translateX(100%);
+      }
+    }
+  }
+  @keyframes previous {
+    from {
+      opacity: 0.3;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 }
