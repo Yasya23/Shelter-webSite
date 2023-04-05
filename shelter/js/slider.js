@@ -2,20 +2,20 @@ import animals from './data.js';
 
 let shownCards = [];
 let previousShownCards = [];
-let active = 0;
+let currentPosition = 0;
 let animationClass = 'animation-next';
 
 function actionWithSlider(direction) {
   if (direction === 'next-slide') {
-    if (active < 1) active++;
+    if (currentPosition < 1) currentPosition++;
     animationClass = 'animation-next';
   }
   if (direction === 'previous-slide') {
-    if (active > -1) active--;
+    if (currentPosition > -1) currentPosition--;
     animationClass = 'animation-previous';
   }
-  // console.log(previousShownCards);
-  active == 0
+
+  currentPosition == 0
     ? renderCards(previousShownCards)
     : selectRandomCards(filterByShownCards());
 }
@@ -31,9 +31,6 @@ function filterByShownCards() {
 function renderCards(cardsArray) {
   previousShownCards = shownCards;
   shownCards = cardsArray;
-  // if (document.querySelector('.slider__cards')) {
-  //   document.querySelector('.slider__cards').remove();
-  // }
   document.querySelector('.slider__cards')?.remove();
 
   const cardsList = document
