@@ -1,5 +1,13 @@
 import animals from './data.js';
 
+document.addEventListener('click', (e) => {
+  console.log(e.target.id);
+  if (!e.target.id) return;
+  if (e.target.id === 'previous-slide' || e.target.id === 'next-slide') {
+    actionWithSlider(e.target.id);
+  }
+});
+
 let shownCards = [];
 let previousShownCards = [];
 let currentPosition = 0;
@@ -62,5 +70,3 @@ function selectRandomCards(sourceArray) {
 }
 
 selectRandomCards(animals);
-
-export default actionWithSlider;

@@ -93,12 +93,13 @@
               </li>
             </ul>
             <div class="friends__pagination pagination">
-              <button class="pagination__btn pagination__btn_inactive" disabled><span>&lt;
+              <button id="to-first-page" class="pagination__btn pagination__btn_inactive" disabled><span>&lt;
                   &lt;</span></button>
-              <button class="pagination__btn pagination__btn_inactive" disabled><span>&lt;</span></button>
+              <button id="previous-page" class="pagination__btn pagination__btn_inactive"
+                disabled><span>&lt;</span></button>
               <div class="pagination__btn pagination__number"><span>1</span></div>
-              <button class="pagination__btn"><span>&gt;</span></button>
-              <button class="pagination__btn"><span>&gt;&gt;</span></button>
+              <button id="next-page" class="pagination__btn"><span>&gt;</span></button>
+              <button id="to-last-page" class="pagination__btn"><span>&gt;&gt;</span></button>
             </div>
           </div>
         </div>
@@ -139,6 +140,7 @@
       </div>
     </footer>
   </div>
+  <script type="module" src="js/index.js"></script>
 </body>
 
 </html>
