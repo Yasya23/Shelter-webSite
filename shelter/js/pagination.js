@@ -1,18 +1,34 @@
 import animals from './data.js';
-
-const pagination = document.querySelector('.pagination');
+const cardsArray = [];
 let pageNumber = 1;
 let lastPage = 5;
 
-pagination.addEventListener('click', (e) => {
+document.querySelector('.pagination').addEventListener('click', (e) => {
   if (e.target.id && !e.target.parentNode.disabled) {
     const action = e.target.id || e.target.parentElement.id;
     actionWithPagination(action);
   }
 });
 
+function createCardsArray(sourceArray) {
+  let elemenetsCounter = 0;
+  while (elemenetsCounter !== 6) {
+    const maxElementsInArray = 8;
+    const arr = [...sourceArray];
+    for (let i = 0; i < maxElementsInArray; i++) {
+      const randomIndex = Math.floor(Math.random() * arr.length);
+      const card = arr.splice(randomIndex, 1)[0];
+      cardsArray.push(card);
+    }
+    elemenetsCounter++;
+  }
+  console.log(cardsArray);
+  // renderCards(selectedCards);
+}
+
+createCardsArray(animals);
+
 function actionWithPagination(action) {
-  console.log(action);
   const toFirstPage = document.getElementById('to-first-page');
   const previousPage = document.getElementById('previous-page');
   const nextPage = document.getElementById('next-page');
