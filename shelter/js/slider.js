@@ -47,24 +47,31 @@ function renderCards(cardsArray) {
   let cards = '';
 
   for (let i = 0; i < cardsArray.length; i++) {
+    const { img, alt, name } = cardsArray[i];
+    console.log(img, alt, name);
     cards += `<li class="slider__card card">
-                  <img class="card__img" src=${cardsArray[i].img} alt=${cardsArray[i].alt}>
-                  <p class="card__title">${cardsArray[i].name}</p>
+                  <img class="card__img" src=${img} alt=${alt}>
+                  <p class="card__title">${name}</p>
                   <button class="card__button button button-outline">Learn more</button>
                 </li>`;
   }
   cardsList.innerHTML = cards;
 }
 
+// function selectRandomCards(sourceArray) {
+//   const selectedCards = [];
+//   const maxCardsInSlider = 3;
+//   const arr = [...sourceArray];
+//   for (let i = 0; i < maxCardsInSlider; i++) {
+//     const randomIndex = Math.floor(Math.random() * arr.length);
+//     const card = arr.splice(randomIndex, 1)[0];
+//     selectedCards.push(card);
+//   }
+//   renderCards(selectedCards);
+// }
+
 function selectRandomCards(sourceArray) {
-  const selectedCards = [];
-  const maxCardsInSlider = 3;
-  const arr = [...sourceArray];
-  for (let i = 0; i < maxCardsInSlider; i++) {
-    const randomIndex = Math.floor(Math.random() * arr.length);
-    const card = arr.splice(randomIndex, 1)[0];
-    selectedCards.push(card);
-  }
+  const selectedCards = sourceArray.sort(() => Math.random() - 0.5).slice(0, 3);
   renderCards(selectedCards);
 }
 

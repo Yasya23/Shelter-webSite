@@ -25,18 +25,14 @@ window.onresize = function () {
 };
 
 function createCardsArray(sourceArray) {
-  let elemenetsCounter = 0;
-  while (elemenetsCounter !== 6) {
-    const maxElementsInArray = 8;
-    const arr = [...sourceArray];
-    for (let i = 0; i < maxElementsInArray; i++) {
-      const randomIndex = Math.floor(Math.random() * arr.length);
-      const card = arr.splice(randomIndex, 1)[0];
-      cardsArray.push(card);
-    }
-    elemenetsCounter++;
-  }
-  // console.log(cardsArray);
+  const maxElementsInArray = 8;
+  const cardsArray = new Array(6)
+    .fill([...sourceArray])
+    .map((arr) =>
+      arr.sort(() => Math.random() - 0.5).slice(0, maxElementsInArray)
+    )
+    .flat();
+
   renderCards(cardsArray);
 }
 
@@ -45,9 +41,10 @@ function renderCards(cardsArray) {
   const cardsToShow = cardsOnPage();
   let cards = '';
   for (let i = 0; i < cardsToShow; i++) {
+    const { img, alt, name } = cardsArray[i];
     cards += `<li class="slider__card card">
-                  <img class="card__img" src=${cardsArray[i].img} alt=${cardsArray[i].alt}>
-                  <p class="card__title">${cardsArray[i].name}</p>
+                  <img class="card__img" src=${img} alt=${alt}>
+                  <p class="card__title">${name}</p>
                   <button class="card__button button button-outline">Learn more</button>
                 </li>`;
   }
