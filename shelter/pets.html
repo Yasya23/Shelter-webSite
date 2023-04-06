@@ -51,55 +51,24 @@
             <h1 class="friends__title">Our friends who <br>
               are looking for a house</h1>
             <ul class="friends__list">
-              <!-- <li class="friends__card card">
-                <img class="card__img" src="img/animals/pets-katrine.png" alt="Cat Katrine">
-                <p class="card__title">Katrine</p>
-                <button class="card__button button button-outline">Learn more</button>
-              </li>
-              <li class="friends__card card">
-                <img class="card__img" src="img/animals/pets-jennifer.png" alt="Dog Jennifer">
-                <p class="card__title">Jennifer</p>
-                <button class="card__button button button-outline">Learn more</button>
-              </li>
-              <li class="friends__card card">
-                <img class="card__img" src="img/animals/pets-woody.png" alt="Dog Woody">
-                <p class="card__title">Woody</p>
-                <button class="card__button button button-outline">Learn more</button>
-              </li>
-              <li class="friends__card card">
-                <img class="card__img" src="img/animals/pets-sophia.png" alt="Dog Sophia">
-                <p class="card__title">Sophia</p>
-                <button class="card__button button button-outline">Learn more</button>
-              </li>
-              <li class="friends__card card">
-                <img class="card__img" src="img/animals/pets-timmy.png" alt="Cat Timmy">
-                <p class="card__title">Timmy</p>
-                <button class="card__button button button-outline">Learn more</button>
-              </li>
-              <li class="friends__card card">
-                <img class="card__img" src="img/animals/pets-charly.png" alt="Dog Charly">
-                <p class="card__title">Charly</p>
-                <button class="card__button button button-outline">Learn more</button>
-              </li>
-              <li class="friends__card card">
-                <img class="card__img" src="img/animals/pets-scarlet.png" alt="Dog Scarlett">
-                <p class="card__title">Scarlett</p>
-                <button class="card__button button button-outline">Learn more</button>
-              </li>
-              <li class="friends__card card">
-                <img class="card__img" src="img/animals/pets-freddie.png" alt="Cat Freddie">
-                <p class="card__title">Freddie</p>
-                <button class="card__button button button-outline">Learn more</button>
-              </li> -->
+
             </ul>
             <div class="friends__pagination pagination">
-              <button id="to-first-page" class="pagination__btn pagination__btn_inactive" disabled><span>&lt;
-                  &lt;</span></button>
-              <button id="previous-page" class="pagination__btn pagination__btn_inactive"
-                disabled><span>&lt;</span></button>
+              <button id="to-first-page" data-id="to-first-page" class="pagination__btn pagination__btn_inactive"
+                disabled>
+                <span data-id="to-first-page">&lt;&lt;</span>
+              </button>
+              <button id="previous-page" data-id="previous-page" class="pagination__btn pagination__btn_inactive"
+                disabled>
+                <span data-id="previous-page">&lt;</span>
+              </button>
               <div class="pagination__btn pagination__number"><span id="page-number">1</span></div>
-              <button id="next-page" class="pagination__btn"><span>&gt;</span></button>
-              <button id="to-last-page" class="pagination__btn"><span>&gt;&gt;</span></button>
+              <button id="next-page" data-id="next-page" class="pagination__btn">
+                <span data-id="next-page">&gt;</span>
+              </button>
+              <button id="to-last-page" data-id="to-last-page" class="pagination__btn">
+                <span data-id="to-last-page">&gt;&gt;</span>
+              </button>
             </div>
           </div>
         </div>
@@ -140,7 +109,7 @@
       </div>
     </footer>
   </div>
-  <script type="module" src="js/index.js"></script>
+  <script src="js/index.js"></script>
   <script type="module" src="js/pagination.js"></script>
 </body>
 

@@ -2,70 +2,64 @@ import animals from './data.js';
 
 const pageNumberHtml = document.getElementById('page-number');
 
-const cardsArray = [];
-let pageNumber = 1;
 const cardsOnPage = () => {
   const screenWidth = window.innerWidth;
   return screenWidth < 601 ? 3 : screenWidth < 1053 ? 6 : 8;
 };
-const pageQuantity = 48 / cardsOnPage;
+const QUANTITY_CARDS_IN_ARRAY = 48;
+let arrayWithCards = [];
+let pageNumber = 1;
+let pageQuantity = QUANTITY_CARDS_IN_ARRAY / cardsOnPage();
 
-document.querySelector('.pagination').addEventListener('click', (e) => {
-  if (e.target.id && !e.target.parentNode.disabled) {
-    const action = e.target.id || e.target.parentElement.id;
-    actionWithPagination(action);
-  }
-});
+let previousCardsOnPage = 0;
+let startCardsPosition = 0;
 
 window.onresize = function () {
-  console.log(cardsOnPage());
-  // if (screenWidth !== prevScreenWidth) {
-  //   console.log(1);
-  // }
+  const cardsPerPage = cardsOnPage();
+  console.log(previousCardsOnPage);
+  if (cardsPerPage !== previousCardsOnPage) {
+    startCardsPosition = Math.round(
+      (pageNumber * previousCardsOnPage) / cardsPerPage
+    );
+    previousCardsOnPage = cardsPerPage;
+    pageQuantity = QUANTITY_CARDS_IN_ARRAY / cardsPerPage;
+    pageNumber =
+      pageNumber > 1 ? Math.round(startCardsPosition + 0.5 / cardsPerPage) : 1;
+  }
+  isDisable();
+  renderCards(arrayWithCards);
 };
 
-function createCardsArray(sourceArray) {
-  const maxElementsInArray = 8;
-  const cardsArray = new Array(6)
-    .fill([...sourceArray])
-    .map((arr) =>
-      arr.sort(() => Math.random() - 0.5).slice(0, maxElementsInArray)
-    )
-    .flat();
-
-  renderCards(cardsArray);
-}
-
-function renderCards(cardsArray) {
-  const cardsList = document.querySelector('.friends__list');
-  const cardsToShow = cardsOnPage();
-  let cards = '';
-  for (let i = 0; i < cardsToShow; i++) {
-    const { img, alt, name } = cardsArray[i];
-    cards += `<li class="slider__card card">
-                  <img class="card__img" src=${img} alt=${alt}>
-                  <p class="card__title">${name}</p>
-                  <button class="card__button button button-outline">Learn more</button>
-                </li>`;
-  }
-  cardsList.innerHTML = cards;
-}
-
-createCardsArray(animals);
+document.querySelector('.pagination').addEventListener('click', (e) => {
+  if (e.target.dataset.id) actionWithPagination(e.target.dataset.id);
+});
 
 function actionWithPagination(action) {
+  if (action === 'next-page') {
+    pageNumber++;
+    startCardsPosition += cardsOnPage();
+    renderCards(arrayWithCards);
+  } else if (action === 'to-last-page') {
+    pageNumber = pageQuantity;
+    startCardsPosition = QUANTITY_CARDS_IN_ARRAY - cardsOnPage();
+    renderCards(arrayWithCards);
+  } else if (action === 'previous-page') {
+    pageNumber--;
+    startCardsPosition -= cardsOnPage();
+    renderCards(arrayWithCards);
+  } else {
+    pageNumber = 1;
+    startCardsPosition = 0;
+    renderCards(arrayWithCards);
+  }
+  isDisable();
+}
+
+function isDisable() {
   const toFirstPage = document.getElementById('to-first-page');
   const previousPage = document.getElementById('previous-page');
   const nextPage = document.getElementById('next-page');
   const toLastPage = document.getElementById('to-last-page');
-
-  action === 'next-page'
-    ? pageNumber++
-    : action === 'to-last-page'
-    ? (pageNumber = pageQuantity)
-    : action === 'previous-page'
-    ? pageNumber--
-    : (pageNumber = 1);
 
   pageNumber === 1
     ? ((toFirstPage.disabled = true),
@@ -82,8 +76,6 @@ function actionWithPagination(action) {
     : ((nextPage.disabled = false),
       (toLastPage.disabled = false),
       removeBtnInactiveClass(nextPage, toLastPage));
-
-  pageNumberHtml.textContent = pageNumber;
 }
 
 function addBtnInactiveClass(...elements) {
@@ -95,3 +87,39 @@ function removeBtnInactiveClass(...elements) {
   const elementClass = 'pagination__btn_inactive';
   elements.forEach((el) => el.classList.remove(elementClass));
 }
+
+function renderCards(cardsArray) {
+  pageNumberHtml.textContent = pageNumber;
+  const cardsList = document.querySelector('.friends__list');
+  const startPosition = startCardsPosition;
+  const endPosition = cardsOnPage() + startPosition;
+  // console.log(startPosition, endPosition);
+  const cards = cardsArray
+    .slice(startPosition, endPosition)
+    .map(
+      ({ img, alt, name }) =>
+        `<li class="slider__card card">
+      <img class="card__img" src="${img}" alt="${alt}">
+      <p class="card__title">${name}</p>
+      <button class="card__button button button-outline">Learn more</button>
+    </li>`
+    )
+    .join('');
+
+  cardsList.innerHTML = cards;
+  previousCardsOnPage = cardsOnPage();
+}
+
+function createCardsArray(sourceArray) {
+  const maxElementsInArray = 8;
+  const sortCardsArray = new Array(6)
+    .fill([...sourceArray])
+    .map((arr) =>
+      arr.sort(() => Math.random() - 0.5).slice(0, maxElementsInArray)
+    )
+    .flat();
+  arrayWithCards = sortCardsArray;
+  renderCards(sortCardsArray);
+}
+
+createCardsArray(animals);
