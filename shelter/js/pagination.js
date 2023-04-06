@@ -16,15 +16,18 @@ let startCardsPosition = 0;
 
 window.onresize = function () {
   const cardsPerPage = cardsOnPage();
-  console.log(previousCardsOnPage);
+
   if (cardsPerPage !== previousCardsOnPage) {
-    startCardsPosition = Math.round(
-      (pageNumber * previousCardsOnPage) / cardsPerPage
-    );
-    previousCardsOnPage = cardsPerPage;
+    console.log(previousCardsOnPage);
+    startCardsPosition =
+      pageNumber !== 1
+        ? Math.round(pageNumber * previousCardsOnPage - cardsPerPage)
+        : 0;
     pageQuantity = QUANTITY_CARDS_IN_ARRAY / cardsPerPage;
     pageNumber =
-      pageNumber > 1 ? Math.round(startCardsPosition + 0.5 / cardsPerPage) : 1;
+      pageNumber > 1
+        ? Math.round((pageNumber * previousCardsOnPage) / cardsPerPage)
+        : 1;
   }
   isDisable();
   renderCards(arrayWithCards);
@@ -93,7 +96,7 @@ function renderCards(cardsArray) {
   const cardsList = document.querySelector('.friends__list');
   const startPosition = startCardsPosition;
   const endPosition = cardsOnPage() + startPosition;
-  // console.log(startPosition, endPosition);
+  console.log(startPosition, endPosition);
   const cards = cardsArray
     .slice(startPosition, endPosition)
     .map(
