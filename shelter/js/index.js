@@ -1,20 +1,30 @@
-// const numCardsOnScreen = () => {
-//   const screenWidth = window.innerWidth;
-//   return screenWidth < 601 ? 1 : screenWidth < 1053 ? 2 : 3;
-// };
+const card = document.querySelector('.card');
+const modalWindow = document.querySelector('.modal');
 
-// let prevScreenWidth = window.innerWidth;
-// window.onresize = function () {
-//   const screenWidth = window.innerWidth;
-//   if (screenWidth !== prevScreenWidth) {
-//     numCardsToShow = calculateNumCardsToShow();
-//     renderCards(selectedCards, numCardsToShow);
-//     prevScreenWidth = screenWidth;
-//   }
-// };
+document.addEventListener('click', (e) => {
+  const clickedCard = e.target.closest('.card');
+  if (clickedCard) {
+    const id = clickedCard.getAttribute('id');
+    showPopupWindow(id);
+  } else if (e.target.parentElement.classList.contains('card')) {
+    const id = e.target.parentElement.getAttribute('id');
+    showPopupWindow(id);
+  }
 
-// function showScore() {
-//   let score = `Все пункты выполнены - 100`;
-//   console.log(score);
-// }
-// showScore();
+  if (e.target === modalWindow) {
+    console.log(close);
+    closeModalWindow();
+  }
+});
+
+function showPopupWindow(id) {
+  if (id) {
+    modalWindow.style.display = 'block';
+    document.body.style.overflowY = 'hidden';
+  }
+}
+
+function closeModalWindow() {
+  modalWindow.style.display = 'none';
+  document.body.style.overflowY = 'visible';
+}

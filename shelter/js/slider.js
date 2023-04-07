@@ -48,8 +48,7 @@ function renderCards(cardsArray) {
 
   for (let i = 0; i < cardsArray.length; i++) {
     const { img, alt, name } = cardsArray[i];
-    console.log(img, alt, name);
-    cards += `<li class="slider__card card">
+    cards += `<li class="slider__card card" id=${name}>
                   <img class="card__img" src=${img} alt=${alt}>
                   <p class="card__title">${name}</p>
                   <button class="card__button button button-outline">Learn more</button>

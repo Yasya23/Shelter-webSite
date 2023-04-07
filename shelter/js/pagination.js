@@ -18,7 +18,7 @@ window.onresize = function () {
   const cardsPerPage = cardsOnPage();
 
   if (cardsPerPage !== previousCardsOnPage) {
-    console.log(previousCardsOnPage);
+    // console.log(previousCardsOnPage);
     startCardsPosition =
       pageNumber !== 1
         ? Math.round(pageNumber * previousCardsOnPage - cardsPerPage)
@@ -34,12 +34,12 @@ window.onresize = function () {
 };
 
 document.querySelector('.pagination').addEventListener('click', (e) => {
-  if (e.target.dataset.id) actionWithPagination(e.target.dataset.id);
+  if (e.target.id) actionWithPagination(e.target.id);
 });
 
 function actionWithPagination(action) {
   if (action === 'next-page') {
-    pageNumber++;
+    if (pageNumber < pageQuantity) pageNumber++;
     startCardsPosition += cardsOnPage();
     renderCards(arrayWithCards);
   } else if (action === 'to-last-page') {
@@ -47,7 +47,9 @@ function actionWithPagination(action) {
     startCardsPosition = QUANTITY_CARDS_IN_ARRAY - cardsOnPage();
     renderCards(arrayWithCards);
   } else if (action === 'previous-page') {
-    pageNumber--;
+    if (pageNumber > 1) {
+      pageNumber--;
+    }
     startCardsPosition -= cardsOnPage();
     renderCards(arrayWithCards);
   } else {
@@ -101,7 +103,7 @@ function renderCards(cardsArray) {
     .slice(startPosition, endPosition)
     .map(
       ({ img, alt, name }) =>
-        `<li class="slider__card card">
+        `<li class="slider__card card" id=${name}>
       <img class="card__img" src="${img}" alt="${alt}">
       <p class="card__title">${name}</p>
       <button class="card__button button button-outline">Learn more</button>

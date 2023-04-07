@@ -1,0 +1,128 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(41, 41, 41, 0.6);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+  &__wrapper {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: toRem(240);
+    min-height: toRem(341);
+    background-color: $color-light-s;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    border-radius: toRem(9);
+    padding: toRem(10);
+
+    @include tablet {
+      min-width: toRem(630);
+      min-height: toRem(350);
+    }
+    @include decstope {
+      width: toRem(900);
+      height: toRem(500);
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    right: toRem(-30);
+    top: toRem(-52);
+    width: toRem(52);
+    height: toRem(52);
+    border: 2px solid $color-primary;
+    border-radius: toRem(100);
+    background-color: transparent;
+    color: $color-dark-3xl;
+    font-size: toRem(20);
+    cursor: pointer;
+    transition: $transition;
+    &:active {
+      color: $color-dark-m;
+    }
+    @include hover {
+      &:hover {
+        background-color: $color-primary-light;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+    object-fit: cover;
+    @include tablet {
+      display: block;
+      width: toRem(350);
+      height: toRem(350);
+    }
+    @include decstope {
+      width: toRem(490);
+      height: toRem(490);
+    }
+  }
+  &__content {
+    @include subtitle;
+    text-align: center;
+    color: $color-black;
+    @include tablet {
+      max-width: toRem(365);
+      text-align: left;
+    }
+    @include decstope {
+      padding: toRem(50) toRem(10) toRem(80);
+    }
+  }
+  &__title {
+    margin-bottom: toRem(10);
+  }
+  &__subtitle {
+    margin-bottom: toRem(10);
+    font-size: toRem(20);
+    @include decstope {
+      margin-bottom: toRem(30);
+    }
+  }
+  &__text {
+    font-size: toRem(13);
+    line-height: 110%;
+    text-align: justify;
+    margin-bottom: toRem(16);
+    @include tablet {
+      text-align: left;
+    }
+    @include decstope {
+      margin-bottom: toRem(40);
+    }
+  }
+  &__list {
+    font-size: toRem(15);
+    line-height: 160%;
+    color: $color-primary;
+    margin-left: 10px;
+  }
+}
+.list-modal {
+  text-align: left;
+
+  &__item {
+    display: list-item;
+    list-style: disc;
+  }
+  &__title {
+    @include georgia-bold;
+    color: $color-black;
+  }
+  &__value {
+    color: $color-black;
+  }
+}

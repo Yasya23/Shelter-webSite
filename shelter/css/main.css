@@ -257,6 +257,163 @@ h6 {
   background-color: #f1cdb3;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(41, 41, 41, 0.6);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.modal__wrapper {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  min-width: 15rem;
+  min-height: 21.31rem;
+  background-color: #fafafa;
+  -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+          box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  border-radius: 0.56rem;
+  padding: 0.63rem;
+}
+@media (min-width: 48rem) {
+  .modal__wrapper {
+    min-width: 39.38rem;
+    min-height: 21.88rem;
+  }
+}
+@media (min-width: 80rem) {
+  .modal__wrapper {
+    width: 56.25rem;
+    height: 31.25rem;
+  }
+}
+.modal__close-btn {
+  position: absolute;
+  right: -1.88rem;
+  top: -3.25rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 2px solid #f1cdb3;
+  border-radius: 6.25rem;
+  background-color: transparent;
+  color: #292929;
+  font-size: 1.25rem;
+  cursor: pointer;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.modal__close-btn:active {
+  color: #b2b2b2;
+}
+@media (hover: hover) {
+  .modal__close-btn:hover {
+    background-color: #fddcc4;
+  }
+}
+.modal__img {
+  display: none;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 48rem) {
+  .modal__img {
+    display: block;
+    width: 21.88rem;
+    height: 21.88rem;
+  }
+}
+@media (min-width: 80rem) {
+  .modal__img {
+    width: 30.63rem;
+    height: 30.63rem;
+  }
+}
+.modal__content {
+  font-size: 2.19rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: #000000;
+}
+@media (min-width: 48rem) {
+  .modal__content {
+    max-width: 22.81rem;
+    text-align: left;
+  }
+}
+@media (min-width: 80rem) {
+  .modal__content {
+    padding: 3.13rem 0.63rem 5rem;
+  }
+}
+.modal__title {
+  margin-bottom: 0.63rem;
+}
+.modal__subtitle {
+  margin-bottom: 0.63rem;
+  font-size: 1.25rem;
+}
+@media (min-width: 80rem) {
+  .modal__subtitle {
+    margin-bottom: 1.88rem;
+  }
+}
+.modal__text {
+  font-size: 0.81rem;
+  line-height: 110%;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+@media (min-width: 48rem) {
+  .modal__text {
+    text-align: left;
+  }
+}
+@media (min-width: 80rem) {
+  .modal__text {
+    margin-bottom: 2.5rem;
+  }
+}
+.modal__list {
+  font-size: 0.94rem;
+  line-height: 160%;
+  color: #f1cdb3;
+  margin-left: 10px;
+}
+
+.list-modal {
+  text-align: left;
+}
+.list-modal__item {
+  display: list-item;
+  list-style: disc;
+}
+.list-modal__title {
+  font-family: "Georgia";
+  font-weight: bold;
+  font-style: normal;
+  color: #000000;
+}
+.list-modal__value {
+  color: #000000;
+}
+
 /* layout-wrapper */
 html,
 body {
@@ -266,6 +423,7 @@ body {
   height: 100%;
   color: #545454;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 .wrapper {
