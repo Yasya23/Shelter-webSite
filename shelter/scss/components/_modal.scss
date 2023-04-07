@@ -22,15 +22,13 @@
     background-color: $color-light-s;
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
     border-radius: toRem(9);
-    padding: toRem(10);
-
     @include tablet {
-      min-width: toRem(630);
+      width: toRem(630);
       min-height: toRem(350);
     }
     @include decstope {
       width: toRem(900);
-      height: toRem(500);
+      min-height: toRem(500);
     }
   }
 
@@ -57,20 +55,39 @@
     }
   }
 
-  &__img {
+  &__img-box {
     display: none;
-    object-fit: cover;
+    overflow: hidden;
+    border-radius: toRem(9);
     @include tablet {
       display: block;
       width: toRem(350);
       height: toRem(350);
     }
     @include decstope {
-      width: toRem(490);
-      height: toRem(490);
+      width: toRem(500);
+      height: toRem(500);
     }
   }
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+    @include tablet {
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      width: toRem(350);
+      height: toRem(350);
+    }
+    @include decstope {
+      width: toRem(500);
+      height: toRem(500);
+    }
+  }
+
   &__content {
+    padding: toRem(10);
     @include subtitle;
     text-align: center;
     color: $color-black;
