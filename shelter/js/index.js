@@ -1,10 +1,15 @@
 import animals from './data.js';
 
-const card = document.querySelector('.card');
+// const card = document.querySelector('.card');
 const modalWindow = document.querySelector('.modal');
 
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modalWindow.style.display !== 'none') {
+    closeModalWindow();
+  }
+});
+
 document.addEventListener('click', (e) => {
-  console.log();
   const clickedCard = e.target.closest('.card');
   if (clickedCard) {
     const id = clickedCard.getAttribute('id');

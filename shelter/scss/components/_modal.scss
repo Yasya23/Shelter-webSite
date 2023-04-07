@@ -34,8 +34,8 @@
 
   &__close-btn {
     position: absolute;
-    right: toRem(-30);
     top: toRem(-52);
+    right: toRem(-30);
     width: toRem(52);
     height: toRem(52);
     border: 2px solid $color-primary;
@@ -53,37 +53,36 @@
         background-color: $color-primary-light;
       }
     }
+    @include tablet {
+      top: toRem(-55);
+      right: toRem(-42);
+    }
   }
 
   &__img-box {
     display: none;
     overflow: hidden;
-    border-radius: toRem(9);
+
     @include tablet {
       display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: toRem(9);
       width: toRem(350);
-      height: toRem(350);
+      height: auto;
     }
     @include decstope {
       width: toRem(500);
-      height: toRem(500);
+      height: auto;
     }
   }
 
   &__img {
+    height: 100%;
+    width: auto;
     max-width: 100%;
-    height: auto;
-    @include tablet {
-      display: block;
-      object-fit: cover;
-      object-position: center;
-      width: toRem(350);
-      height: toRem(350);
-    }
-    @include decstope {
-      width: toRem(500);
-      height: toRem(500);
-    }
+    object-fit: cover;
   }
 
   &__content {
@@ -92,40 +91,49 @@
     text-align: center;
     color: $color-black;
     @include tablet {
-      max-width: toRem(365);
+      max-width: toRem(280);
       text-align: left;
     }
     @include decstope {
-      padding: toRem(50) toRem(10) toRem(80);
+      max-width: toRem(380);
+      padding: toRem(50) toRem(10) toRem(60);
     }
   }
-  &__title {
-    margin-bottom: toRem(10);
-  }
+
   &__subtitle {
-    margin-bottom: toRem(10);
+    letter-spacing: 0.06em;
+    margin-bottom: toRem(8);
     font-size: toRem(20);
+
     @include decstope {
-      margin-bottom: toRem(30);
+      margin-bottom: toRem(25);
+      font-size: toRem(20);
     }
   }
   &__text {
     font-size: toRem(13);
     line-height: 110%;
+    letter-spacing: 0.06em;
     text-align: justify;
     margin-bottom: toRem(16);
     @include tablet {
       text-align: left;
     }
     @include decstope {
-      margin-bottom: toRem(40);
+      font-size: toRem(15);
+      letter-spacing: 0.07em;
+      margin-bottom: toRem(48);
     }
   }
   &__list {
     font-size: toRem(15);
     line-height: 160%;
     color: $color-primary;
-    margin-left: 10px;
+    letter-spacing: 0.06em;
+    margin-left: toRem(11);
+    @include decstope {
+      line-height: 170%;
+    }
   }
 }
 .list-modal {

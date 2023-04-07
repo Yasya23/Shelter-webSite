@@ -16,7 +16,6 @@ let startCardsPosition = 0;
 
 window.onresize = function () {
   const cardsPerPage = cardsOnPage();
-
   if (cardsPerPage !== previousCardsOnPage) {
     // console.log(previousCardsOnPage);
     startCardsPosition =

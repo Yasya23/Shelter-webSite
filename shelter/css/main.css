@@ -305,8 +305,8 @@ h6 {
 }
 .modal__close-btn {
   position: absolute;
-  right: -1.88rem;
   top: -3.25rem;
+  right: -1.88rem;
   width: 3.25rem;
   height: 3.25rem;
   border: 2px solid #f1cdb3;
@@ -326,44 +326,45 @@ h6 {
     background-color: #fddcc4;
   }
 }
+@media (min-width: 48rem) {
+  .modal__close-btn {
+    top: -3.44rem;
+    right: -2.63rem;
+  }
+}
 .modal__img-box {
   display: none;
   overflow: hidden;
-  border-radius: 0.56rem;
 }
 @media (min-width: 48rem) {
   .modal__img-box {
     display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 0.56rem;
     width: 21.88rem;
-    height: 21.88rem;
+    height: auto;
   }
 }
 @media (min-width: 80rem) {
   .modal__img-box {
     width: 31.25rem;
-    height: 31.25rem;
+    height: auto;
   }
 }
 .modal__img {
+  height: 100%;
+  width: auto;
   max-width: 100%;
-  height: auto;
-}
-@media (min-width: 48rem) {
-  .modal__img {
-    display: block;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center;
-    width: 21.88rem;
-    height: 21.88rem;
-  }
-}
-@media (min-width: 80rem) {
-  .modal__img {
-    width: 31.25rem;
-    height: 31.25rem;
-  }
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .modal__content {
   padding: 0.63rem;
@@ -375,30 +376,31 @@ h6 {
 }
 @media (min-width: 48rem) {
   .modal__content {
-    max-width: 22.81rem;
+    max-width: 17.5rem;
     text-align: left;
   }
 }
 @media (min-width: 80rem) {
   .modal__content {
-    padding: 3.13rem 0.63rem 5rem;
+    max-width: 23.75rem;
+    padding: 3.13rem 0.63rem 3.75rem;
   }
 }
-.modal__title {
-  margin-bottom: 0.63rem;
-}
 .modal__subtitle {
-  margin-bottom: 0.63rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
   font-size: 1.25rem;
 }
 @media (min-width: 80rem) {
   .modal__subtitle {
-    margin-bottom: 1.88rem;
+    margin-bottom: 1.56rem;
+    font-size: 1.25rem;
   }
 }
 .modal__text {
   font-size: 0.81rem;
   line-height: 110%;
+  letter-spacing: 0.06em;
   text-align: justify;
   margin-bottom: 1rem;
 }
@@ -409,14 +411,22 @@ h6 {
 }
 @media (min-width: 80rem) {
   .modal__text {
-    margin-bottom: 2.5rem;
+    font-size: 0.94rem;
+    letter-spacing: 0.07em;
+    margin-bottom: 3rem;
   }
 }
 .modal__list {
   font-size: 0.94rem;
   line-height: 160%;
   color: #f1cdb3;
-  margin-left: 10px;
+  letter-spacing: 0.06em;
+  margin-left: 0.69rem;
+}
+@media (min-width: 80rem) {
+  .modal__list {
+    line-height: 170%;
+  }
 }
 
 .list-modal {
