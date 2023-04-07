@@ -116,14 +116,40 @@ function renderCards(cardsArray) {
 
 function createCardsArray(sourceArray) {
   const maxElementsInArray = 8;
-  const sortCardsArray = new Array(6)
-    .fill([...sourceArray])
-    .map((arr) =>
-      arr.sort(() => Math.random() - 0.5).slice(0, maxElementsInArray)
-    )
+  const sortArray = sourceArray
+    .sort(() => Math.random() - 0.5)
+    .slice(0, maxElementsInArray);
+
+  const finalArray = new Array(6)
+    .fill([...sortArray])
+    .map((arr) => {
+      const sortSubarrays = [];
+      let firstArray = arr.slice(0, 3).sort(() => Math.random() - 0.5);
+      let secondArray = arr.slice(3, 6).sort(() => Math.random() - 0.5);
+      let thirdArray = arr.slice(6, 8).sort(() => Math.random() - 0.5);
+      sortSubarrays.push(firstArray, secondArray, thirdArray);
+      return sortSubarrays.flat();
+    })
     .flat();
-  arrayWithCards = sortCardsArray;
-  renderCards(sortCardsArray);
+
+  arrayWithCards = finalArray;
+  test(finalArray);
+  renderCards(finalArray);
+}
+
+function test(finalArray) {
+  for (let i = 0; i < finalArray.length; i += 6) {
+    const set = finalArray.slice(i, i + 6);
+    const uniqueSet = new Set(set.map((obj) => JSON.stringify(obj)));
+    const uniqueArray = Array.from(uniqueSet).map((str) => JSON.parse(str));
+    console.log(uniqueArray.length);
+  }
+  for (let i = 0; i < finalArray.length; i += 8) {
+    const set = finalArray.slice(i, i + 8);
+    const uniqueSet = new Set(set.map((obj) => JSON.stringify(obj)));
+    const uniqueArray = Array.from(uniqueSet).map((str) => JSON.parse(str));
+    console.log(uniqueArray.length);
+  }
 }
 
 createCardsArray(animals);
