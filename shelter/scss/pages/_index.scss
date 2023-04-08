@@ -34,6 +34,17 @@
       }
     }
   }
+  @include max-tablet {
+    & .navigation {
+      background-color: $color-dark-3xl;
+      &__link {
+        color: $color-light-s;
+        &_active {
+          color: $color-white;
+        }
+      }
+    }
+  }
 }
 
 @import '../sections/not-only';

@@ -1,16 +1,66 @@
 /* components-navigation */
 
 .navigation {
+  @include max-tablet {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: toRem(320);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: toRem(40);
+    background-color: $color-dark-3xl;
+    z-index: 3;
+    transform: translateX(100%);
+    animation-duration: 1s;
+    &_visible {
+      transform: translateX(0%);
+      animation-name: slide-in;
+      animation-duration: 1s;
+    }
+
+    &_hidden {
+      transform: translateX(100%);
+      animation-name: slide-out;
+      animation-duration: 1s;
+    }
+
+    @keyframes slide-in {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(0%);
+      }
+    }
+
+    @keyframes slide-out {
+      from {
+        transform: translateX(0%);
+      }
+      to {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  &__link {
+    @include text;
+    line-height: 160%;
+    transition: $transition;
+    &_active {
+      border-bottom: 3px solid $color-primary;
+    }
+    @include max-tablet {
+      font-size: toRem(32);
+      line-height: 160%;
+    }
+  }
   @include tablet {
     display: flex;
     gap: toRem(35);
-    &__link {
-      @include text;
-      line-height: 160%;
-      transition: $transition;
-      &_active {
-        border-bottom: 3px solid $color-primary;
-      }
-    }
   }
 }

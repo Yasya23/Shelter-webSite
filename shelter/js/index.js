@@ -10,21 +10,57 @@ document.addEventListener('keydown', (e) => {
 });
 
 document.addEventListener('click', (e) => {
+  const clickPopup = e.target.closest('.header__popup');
   const clickedCard = e.target.closest('.card');
   if (clickedCard) {
     const id = clickedCard.getAttribute('id');
-    showPopupWindow(id);
+    showModalWindow(id);
   } else if (e.target.parentElement.classList.contains('card')) {
     const id = e.target.parentElement.getAttribute('id');
-    showPopupWindow(id);
+    showModalWindow(id);
   }
 
   if (e.target === modalWindow || e.target.closest('.modal__close-btn')) {
     closeModalWindow();
   }
+
+  if (clickPopup) {
+    togglePopupMenu();
+  }
 });
 
-function showPopupWindow(id) {
+function togglePopupMenu() {
+  const navList = document.querySelector('.navigation');
+  const nav = document.querySelector('.header__navigation');
+  const popup = document.getElementById('popup-button');
+  nav.classList.toggle('header__navigation_visible');
+
+  if (navList.classList.contains('navigation_visible')) {
+    hideMenu(navList);
+  } else {
+    showMenu(navList);
+  }
+  blockVerticalScroll();
+
+  popup.classList.toggle('header__popup_open');
+}
+
+function showMenu(nav) {
+  nav.classList.add('navigation_visible');
+  nav.classList.remove('navigation_hidden');
+}
+
+function hideMenu(nav) {
+  nav.classList.add('navigation_hidden');
+  nav.classList.remove('navigation_visible');
+}
+
+function blockVerticalScroll() {
+  document.body.style.overflowY =
+    document.body.style.overflowY === 'hidden' ? 'auto' : 'hidden';
+}
+
+function showModalWindow(id) {
   if (id) {
     renderModalInformation(id);
     modalWindow.style.display = 'block';
@@ -34,14 +70,14 @@ function showPopupWindow(id) {
 
 function closeModalWindow() {
   modalWindow.style.display = 'none';
-  document.body.style.overflowY = 'visible';
+  document.body.style.overflowY = 'auto';
 }
 
 function renderModalInformation(id) {
   const animal = animals.filter((animal) => animal.name === id);
   const {
     age,
-    img,
+    imgHight,
     alt,
     breed,
     description,
@@ -51,11 +87,10 @@ function renderModalInformation(id) {
     parasites,
     type,
   } = animal[0];
-  console.log(name);
   modalWindow.innerHTML = `<div id="modal-window" class="modal__wrapper">
         <button class="modal__close-btn">x</button>
         <div class="modal__img-box">
-          <img  class="modal__img" src=${img} alt=${alt}>
+          <img  class="modal__img" src=${imgHight} alt=${alt}>
         </div>
         <div class="modal__content">
           <h3 class="modal__title">${name}</h3>

@@ -18,6 +18,14 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: transparent;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+    @include max-tablet {
+      z-index: 3;
+      &_open {
+        transform: rotate(90deg);
+      }
+    }
     &_line {
       width: toRem(30);
       height: toRem(2);
@@ -28,7 +36,22 @@
     }
   }
   &__navigation {
-    display: none;
+    @include max-tablet {
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      width: 100vw;
+      height: 100vh;
+      z-index: 2;
+      transition: background-color 1s ease-in-out, visibility 1s ease-in-out;
+      &_visible {
+        visibility: visible;
+        background-color: rgba(41, 41, 41, 0.6);
+      }
+    }
+
     @include tablet {
       display: block;
     }

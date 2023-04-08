@@ -54,10 +54,10 @@
     gap: toRem(40);
 
     &.animation-previous {
-      animation: previous 1.5s ease-out;
+      animation: previous 1s ease-out;
     }
     &.animation-next {
-      animation: next 1.5s ease-out;
+      animation: next 1s ease-out;
     }
 
     @include decstope {

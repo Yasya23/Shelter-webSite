@@ -17,7 +17,6 @@ let startCardsPosition = 0;
 window.onresize = function () {
   const cardsPerPage = cardsOnPage();
   if (cardsPerPage !== previousCardsOnPage) {
-    // console.log(previousCardsOnPage);
     startCardsPosition =
       pageNumber !== 1
         ? Math.round(pageNumber * previousCardsOnPage - cardsPerPage)
@@ -97,7 +96,6 @@ function renderCards(cardsArray) {
   const cardsList = document.querySelector('.friends__list');
   const startPosition = startCardsPosition;
   const endPosition = cardsOnPage() + startPosition;
-  console.log(startPosition, endPosition);
   const cards = cardsArray
     .slice(startPosition, endPosition)
     .map(
@@ -133,23 +131,24 @@ function createCardsArray(sourceArray) {
     .flat();
 
   arrayWithCards = finalArray;
-  test(finalArray);
   renderCards(finalArray);
+  //test - show that every 6 and 8 sets of cards unique or not
+  // test(finalArray);
 }
 
-function test(finalArray) {
-  for (let i = 0; i < finalArray.length; i += 6) {
-    const set = finalArray.slice(i, i + 6);
-    const uniqueSet = new Set(set.map((obj) => JSON.stringify(obj)));
-    const uniqueArray = Array.from(uniqueSet).map((str) => JSON.parse(str));
-    console.log(uniqueArray.length);
-  }
-  for (let i = 0; i < finalArray.length; i += 8) {
-    const set = finalArray.slice(i, i + 8);
-    const uniqueSet = new Set(set.map((obj) => JSON.stringify(obj)));
-    const uniqueArray = Array.from(uniqueSet).map((str) => JSON.parse(str));
-    console.log(uniqueArray.length);
-  }
-}
+// function test(finalArray) {
+//   for (let i = 0; i < finalArray.length; i += 6) {
+//     const set = finalArray.slice(i, i + 6);
+//     const uniqueSet = new Set(set.map((obj) => JSON.stringify(obj)));
+//     const uniqueArray = Array.from(uniqueSet).map((str) => JSON.parse(str));
+//     console.log(uniqueArray.length);
+//   }
+//   for (let i = 0; i < finalArray.length; i += 8) {
+//     const set = finalArray.slice(i, i + 8);
+//     const uniqueSet = new Set(set.map((obj) => JSON.stringify(obj)));
+//     const uniqueArray = Array.from(uniqueSet).map((str) => JSON.parse(str));
+//     console.log(uniqueArray.length);
+//   }
+// }
 
 createCardsArray(animals);
