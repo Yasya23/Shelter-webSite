@@ -45,9 +45,7 @@ function actionWithPagination(action) {
     startCardsPosition = QUANTITY_CARDS_IN_ARRAY - cardsOnPage();
     renderCards(arrayWithCards);
   } else if (action === 'previous-page') {
-    if (pageNumber > 1) {
-      pageNumber--;
-    }
+    if (pageNumber > 1) pageNumber--;
     startCardsPosition -= cardsOnPage();
     renderCards(arrayWithCards);
   } else {
@@ -152,3 +150,9 @@ function createCardsArray(sourceArray) {
 // }
 
 createCardsArray(animals);
+
+function showScore() {
+  let score = `Все пункты выполнены - 110`;
+  console.log(score);
+}
+showScore();

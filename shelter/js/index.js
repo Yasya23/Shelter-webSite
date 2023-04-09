@@ -1,6 +1,5 @@
 import animals from './data.js';
 
-// const card = document.querySelector('.card');
 const modalWindow = document.querySelector('.modal');
 
 document.addEventListener('keydown', (e) => {
@@ -9,9 +8,13 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+const nav = document.querySelector('.header__navigation');
+const navList = document.querySelector('.navigation');
+
 document.addEventListener('click', (e) => {
   const clickPopup = e.target.closest('.header__popup');
   const clickedCard = e.target.closest('.card');
+
   if (clickedCard) {
     const id = clickedCard.getAttribute('id');
     showModalWindow(id);
@@ -24,22 +27,21 @@ document.addEventListener('click', (e) => {
     closeModalWindow();
   }
 
-  if (clickPopup) {
+  if (clickPopup) togglePopupMenu();
+
+  if (e.target === nav || e.target.closest('.navigation__link')) {
     togglePopupMenu();
   }
 });
 
 function togglePopupMenu() {
-  const navList = document.querySelector('.navigation');
-  const nav = document.querySelector('.header__navigation');
   const popup = document.getElementById('popup-button');
   nav.classList.toggle('header__navigation_visible');
 
-  if (navList.classList.contains('navigation_visible')) {
-    hideMenu(navList);
-  } else {
-    showMenu(navList);
-  }
+  navList.classList.contains('navigation_visible')
+    ? hideMenu(navList)
+    : showMenu(navList);
+
   blockVerticalScroll();
 
   popup.classList.toggle('header__popup_open');

@@ -206,7 +206,6 @@ h6 {
 @media (max-width: 48rem) {
   .navigation__link {
     font-size: 2rem;
-    line-height: 160%;
   }
 }
 @media (min-width: 48rem) {

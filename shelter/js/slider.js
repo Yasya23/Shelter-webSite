@@ -22,7 +22,7 @@ function actionWithSlider(direction) {
     animationClass = 'animation-previous';
   }
 
-  currentPosition == 0
+  currentPosition === 0
     ? renderCards(previousShownCards)
     : selectRandomCards(filterByShownCards());
 }
@@ -38,36 +38,30 @@ function filterByShownCards() {
 function renderCards(cardsArray) {
   previousShownCards = shownCards;
   shownCards = cardsArray;
+  if (previousShownCards.length === 0) previousShownCards = shownCards;
+
   document.querySelector('.slider__cards')?.remove();
 
   const cardsList = document
     .querySelector('.slider__wrapper')
     .appendChild(document.createElement('ul'));
+
   cardsList.classList.add('slider__cards', animationClass);
-  let cards = '';
 
-  for (let i = 0; i < cardsArray.length; i++) {
-    const { img, alt, name } = cardsArray[i];
-    cards += `<li class="slider__card card" id=${name}>
-                  <img class="card__img" src=${img} alt=${alt}>
-                  <p class="card__title">${name}</p>
-                  <button class="card__button button button-outline">Learn more</button>
-                </li>`;
-  }
-  cardsList.innerHTML = cards;
+  cardsList.innerHTML = cardsArray
+    .map(
+      ({ img, alt, name }) => `
+    <li class="slider__card card" id="${name}">
+        <img class="card__img" src="${img}" alt="${alt}">
+        <p class="card__title">${name}</p>
+        <button class="card__button button button-outline">Learn more</button>
+    </li>
+`
+    )
+    .join('');
+
+  if (previousShownCards.length === 0) previousShownCards = shownCards;
 }
-
-// function selectRandomCards(sourceArray) {
-//   const selectedCards = [];
-//   const maxCardsInSlider = 3;
-//   const arr = [...sourceArray];
-//   for (let i = 0; i < maxCardsInSlider; i++) {
-//     const randomIndex = Math.floor(Math.random() * arr.length);
-//     const card = arr.splice(randomIndex, 1)[0];
-//     selectedCards.push(card);
-//   }
-//   renderCards(selectedCards);
-// }
 
 function selectRandomCards(sourceArray) {
   const selectedCards = sourceArray.sort(() => Math.random() - 0.5).slice(0, 3);

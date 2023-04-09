@@ -56,7 +56,6 @@
     }
     @include max-tablet {
       font-size: toRem(32);
-      line-height: 160%;
     }
   }
   @include tablet {
